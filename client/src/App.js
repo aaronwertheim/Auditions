@@ -21,7 +21,7 @@ function App() {
         <NavBar user={user} setUser={setUser} />
         <Switch>
           <Route path="/">
-            <h1>Hello {user.username}</h1>
+            <h1 className="text-3xl font-bold underline">Hello {user.username}</h1>
           </Route>
         </Switch>
     </BrowserRouter>

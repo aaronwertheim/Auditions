@@ -33,38 +33,45 @@ function SignUpForm({ onLogin }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="username">Username</label>
+      <div class="mb-4">
         <input
           type="text"
+          class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
           id="username"
+          placeholder="Username"
           autoComplete="off"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
       </div>
-      <div>
-        <label htmlFor="password">Password</label>
+      <div class="mb-4">
         <input
           type="password"
           id="password"
+          class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           autoComplete="current-password"
         />
       </div>
-      <div>
-        <label htmlFor="password">Password Confirmation</label>
+      <div class="mb-4">
         <input
           type="password"
           id="password_confirmation"
+          class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           autoComplete="current-password"
+          placeholder="Password Confirmation"
         />
       </div>
-      <div>
-        <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
+      <div class="text-center pt-1 mb-12 pb-1">
+        <button
+            type="submit"
+            class="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3 bg-black"
+            >{isLoading ? "Loading..." : "Sign Up"}
+        </button>
       </div>
       <div>
         {errors.map((err) => (

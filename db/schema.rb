@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_10_175238) do
     t.string "company"
     t.string "title"
     t.string "poster_url"
+    t.integer "user_id"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

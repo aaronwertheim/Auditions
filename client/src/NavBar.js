@@ -23,7 +23,10 @@ function NavBar({ user, setUser }) {
 
             <div class="text-sm lg:flex-grow">
                     {user.role === "Casting Director" ? 
-                        <Link to="/new-show" class="block mt-4 lg:inline-block lg:mt-0 hover:text-teal-500 mr-4">Add a Show</Link> : 
+                        <>
+                            <Link to="/" class="block mt-4 lg:inline-block lg:mt-0 hover:text-teal-500 mr-4">My Shows</Link> 
+                            <Link to="/new-show" class="block mt-4 lg:inline-block lg:mt-0 hover:text-teal-500 mr-4">Add a Show</Link> 
+                        </> :
                         <>
                             <Link to="/" class="block mt-4 lg:inline-block lg:mt-0 mr-4 hover:text-teal-500">See All Shows</Link>
                             <Link to="/auditions-list" class="block mt-4 lg:inline-block lg:mt-0 hover:text-teal-500  mr-4">View My Auditions</Link>

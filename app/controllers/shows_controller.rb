@@ -12,6 +12,6 @@ class ShowsController < ApplicationController
     private
     
     def show_params
-        params.permit(:title, :poster_url, :company, :description)
+        params.permit(:title, :poster_url, :company, :description, :user_id)
     end
 end

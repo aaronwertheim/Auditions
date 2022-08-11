@@ -24,6 +24,7 @@ function NewShow({user}) {
             poster_url: posterUrl,
             company: company,
             description: description,
+            user_id: user.id,
           }),
         }).then((r) => {
           setIsLoading(false);

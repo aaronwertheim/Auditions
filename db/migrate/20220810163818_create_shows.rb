@@ -4,6 +4,7 @@ class CreateShows < ActiveRecord::Migration[7.0]
       t.string :company
       t.string :title
       t.string :poster_url
+      t.integer :user_id
       t.text :description
 
       t.timestamps

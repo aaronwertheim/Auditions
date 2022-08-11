@@ -1,6 +1,4 @@
 import ShowCard from "./ShowCard";
-import NewAudition from "./NewAudition";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 

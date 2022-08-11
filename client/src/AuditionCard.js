@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function AuditionCard({audition}) {
+function AuditionCard({audition, user}) {
 
     const [newTime, setNewTime] = useState(audition.prefered_time)
 
@@ -19,11 +19,11 @@ function AuditionCard({audition}) {
           method: "DELETE",
         })
     }
-    
+
     return (
         <div class="m-4 border-2 border-white">
             <form onSubmit={() => handleUpdate(audition.id)}>
-                <div>Company: {audition.show.company}</div>
+                <div>Company: { audition.show.company}</div>
                 <div>Show: {audition.show.title}</div>
                     Requested Time: <input defaultValue={audition.prefered_time} onChange={(e) => setNewTime(e.target.value)} ></input>&nbsp;
                 <button class="border-white border-2">Edit</button>

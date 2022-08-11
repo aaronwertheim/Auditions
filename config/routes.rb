@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/shows', to: 'shows#index'
   post '/shows', to: 'shows#create'
+
   
 end

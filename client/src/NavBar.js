@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 function NavBar({ user, setUser }) {
@@ -16,7 +16,8 @@ function NavBar({ user, setUser }) {
             
             <div class="flex items-center flex-shrink-0  mr-6">
                 <img    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqPyn7GGPgHZw_rjM52BSBt4vhgq_pzQaig&usqp=CAU"
-                        class="fill-current h-10 w-10 mr-2 rounded">
+                        class="fill-current h-10 w-10 mr-2 rounded"
+                        alt="">
                 </img>
                 <span class="font-semibold text-xl tracking-tight">{ user.role === "Casting Director" ? "Casting Directors" : "Performers" }</span>
             </div>

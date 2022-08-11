@@ -29,15 +29,15 @@ function App() {
         <NavBar user={user} setUser={setUser} />
         <Switch>
           <Route exact path="/">
-            {user.role === "Performer" ? <PerformerPage user={user} setCurrentShow={setCurrentShow}/> : <DirectorPage user={user} />}
+            {user.role === "Performer" ? <PerformerPage user={user} setCurrentShow={setCurrentShow}/> : <DirectorPage user={user} setCurrentShow={setCurrentShow} />}
           </Route>
           <Route exact path="/new-show">
             <NewShow user={user} />
           </Route>
           <Route exact path="/auditions-list">
-            <AuditionsList />
+            <AuditionsList user={user} currentShow={currentShow}/>
           </Route>
-          <Route>
+          <Route exact path="/new-audition">
             <NewAudition currentShow={currentShow}/>
           </Route>
 

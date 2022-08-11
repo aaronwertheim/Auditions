@@ -32,11 +32,18 @@ function NewAudition({currentShow}) {
     
 
     return (
+        <>
         <form onSubmit={handleSubmit}>
             <input placeholder="Preferred timeslot" value={preferedTime} onChange={(e) => setPerferedTime(e.target.value)}></input>
             <button>Submit</button>
             <Link to="/">Cancel</Link>
         </form>
+        <div>
+        {errors.map((err) => (
+          <div key={err}>{err}</div>
+        ))}
+      </div>
+      </>
     )
 }
 

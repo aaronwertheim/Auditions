@@ -5,7 +5,8 @@ function ShowCard({show, user, setCurrentShow}) {
             <div class="flex flex-col md:flex-row overflow-hidden bg-white rounded-lg shadow-xl  mt-4 w-100  mx-2">
                 <div  class="h-64 w-auto md:w-1/2">
                     <img    src={show.poster_url}
-                            class=" h-full w-1/2 object-cover object-center m-auto">
+                            class=" h-full w-1/2 object-cover object-center m-auto"
+                            alt="">
                     </img>
                 </div>
                 <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
@@ -14,7 +15,7 @@ function ShowCard({show, user, setCurrentShow}) {
                     <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">{show.company}</p>
                 </div>
                 
-                {user.role === "Performer" ? <Link to="new-audition" onClick={() => setCurrentShow(show)} >Audition</Link> : <></>}
+                {user.role === "Performer" ? <Link to="/new-audition" onClick={() => setCurrentShow(show)} >Audition</Link> : <Link to="/auditions-list" onClick={() => setCurrentShow(show)}>Submissions</Link>}
                 
             </div>  
     )

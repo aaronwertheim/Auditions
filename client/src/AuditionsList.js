@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import AuditionCard from "./AuditionCard"
 
 function AuditionsList() {
 
@@ -12,7 +13,7 @@ function AuditionsList() {
 
     return (
         auditions.map(audition => (
-            <div key={audition.id}>{audition.prefered_time}</div>
+            <AuditionCard key={audition.id} audition={audition} />
         ))
     )
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function NewAudition({user, show}) {
 
@@ -35,6 +35,7 @@ function NewAudition({user, show}) {
         <form onSubmit={handleSubmit}>
             <input placeholder="Preferred timeslot" value={preferedTime} onChange={(e) => setPerferedTime(e.target.value)}></input>
             <button>Submit</button>
+            <Link to="/">Cancel</Link>
         </form>
     )
 }

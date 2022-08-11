@@ -20,7 +20,6 @@ function AuditionCard({audition}) {
         })
     }
     
-
     return (
         <div class="m-4 border-2 border-white">
             <form onSubmit={() => handleUpdate(audition.id)}>
@@ -28,7 +27,8 @@ function AuditionCard({audition}) {
                 <div>Show: {audition.show.title}</div>
                     Requested Time: <input defaultValue={audition.prefered_time} onChange={(e) => setNewTime(e.target.value)} ></input>&nbsp;
                 <button class="border-white border-2">Edit</button>
-                <button onClick={() => handleDelete(audition.id)} class="border-white border-2">🗑️ Delete</button> </form>
+                <button onClick={() => handleDelete(audition.id)} class="border-white border-2">🗑️ Delete</button> 
+            </form>
         </div>
     )
 }

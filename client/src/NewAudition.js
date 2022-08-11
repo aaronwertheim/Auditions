@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-function NewAudition({user, show}) {
+function NewAudition({currentShow}) {
 
     const [preferedTime, setPerferedTime] = useState("")
     const [errors, setErrors] = useState([]);
@@ -18,12 +18,12 @@ function NewAudition({user, show}) {
           },
           body: JSON.stringify({
             prefered_time: preferedTime,
-            show_id: show.id,
+            show_id: currentShow.id,
           }),
         }).then((r) => {
           setIsLoading(false);
           if (r.ok) {
-            history.push("/");
+            history.push("/auditions-list");
           } else {
             r.json().then((err) => setErrors(err.errors));
           }

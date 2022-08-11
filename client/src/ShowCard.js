@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function ShowCard({show, user}) {
+function ShowCard({show, user, setCurrentShow}) {
     return (
             <div class="flex flex-col md:flex-row overflow-hidden bg-white rounded-lg shadow-xl  mt-4 w-100  mx-2">
                 <div  class="h-64 w-auto md:w-1/2">
@@ -14,7 +14,7 @@ function ShowCard({show, user}) {
                     <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">{show.company}</p>
                 </div>
                 
-                {user.role === "Performer" ? <Link to="new-audition">Audition</Link> : <></>}
+                {user.role === "Performer" ? <Link to="new-audition" onClick={() => setCurrentShow(show)} >Audition</Link> : <></>}
                 
             </div>  
     )

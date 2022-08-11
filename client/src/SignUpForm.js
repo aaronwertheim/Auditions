@@ -4,6 +4,7 @@ function SignUpForm({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [role, setRole] = useState();
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -20,6 +21,7 @@ function SignUpForm({ onLogin }) {
         username,
         password,
         password_confirmation: passwordConfirmation,
+        role,
       }),
     }).then((r) => {
       setIsLoading(false);
@@ -65,6 +67,14 @@ function SignUpForm({ onLogin }) {
           autoComplete="current-password"
           placeholder="Password Confirmation"
         />
+      </div>
+      <div class="mb-4">
+        <div class="form-control  w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                <input type="radio" id="performer" name="role" value="Performer" onClick={(e) => setRole(e.target.value)}></input>
+                <label for="performer"> Performer</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" id="casting-director" name="role" value="Casting Director" onClick={(e) => setRole(e.target.value)}></input>
+                <label for="casting-director"> Casting Director</label>  
+        </div>
       </div>
       <div class="text-center pt-1 mb-12 pb-1">
         <button

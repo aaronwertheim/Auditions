@@ -38,7 +38,7 @@ function SignUpForm({ onLogin }) {
       <div class="mb-4">
         <input
           type="text"
-          class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none"
           id="username"
           placeholder="Username"
           autoComplete="off"
@@ -50,7 +50,7 @@ function SignUpForm({ onLogin }) {
         <input
           type="password"
           id="password"
-          class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -61,7 +61,7 @@ function SignUpForm({ onLogin }) {
         <input
           type="password"
           id="password_confirmation"
-          class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none"
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           autoComplete="current-password"
@@ -69,7 +69,7 @@ function SignUpForm({ onLogin }) {
         />
       </div>
       <div class="mb-4">
-        <div class="form-control  w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+        <div class="form-control  w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                 <input type="radio" id="performer" name="role" value="Performer" onClick={(e) => setRole(e.target.value)}></input>
                 <label for="performer"> Performer</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="radio" id="casting-director" name="role" value="Casting Director" onClick={(e) => setRole(e.target.value)}></input>

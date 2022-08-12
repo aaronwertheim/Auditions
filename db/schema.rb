@@ -15,7 +15,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_10_175238) do
   enable_extension "plpgsql"
 
   create_table "auditions", force: :cascade do |t|
-    t.string "prefered_time"
+    t.string "availability"
+    t.string "full_name"
+    t.string "desired_role"
     t.integer "user_id"
     t.integer "show_id"
     t.datetime "created_at", null: false

@@ -23,6 +23,6 @@ class AuditionsController < ApplicationController
     private
 
     def audition_params
-        params.permit(:prefered_time, :show_id, :user_id)
+        params.permit(:show_id, :user_id, :full_name, :availability, :desired_role)
     end
 end

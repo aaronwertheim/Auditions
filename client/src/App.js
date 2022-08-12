@@ -7,6 +7,7 @@ import DirectorPage from "./DirectorPage";
 import NewShow from "./NewShow";
 import AuditionsList from "./AuditionsList";
 import NewAudition from "./NewAudition";
+import AuditionsListCasting from "./AuditionsListCasting";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -35,12 +36,14 @@ function App() {
             <NewShow user={user} />
           </Route>
           <Route exact path="/auditions-list">
-            <AuditionsList user={user} currentShow={currentShow}/>
+            <AuditionsList user={user} />
           </Route>
           <Route exact path="/new-audition">
             <NewAudition currentShow={currentShow}/>
           </Route>
-
+          <Route exact path="/auditions-list-casting">
+            <AuditionsListCasting user={user} currentShow={currentShow} />
+          </Route>
         </Switch>
     </BrowserRouter>
   );

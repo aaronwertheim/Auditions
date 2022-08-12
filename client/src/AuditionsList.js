@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import AuditionCard from "./AuditionCard"
 
-function AuditionsList({user, currentShow}) {
+function AuditionsList({user}) {
 
     const [auditions, setAuditions] = useState([]);
+    
+
     
     useEffect(() => {
         fetch("/auditions")
@@ -17,4 +19,5 @@ function AuditionsList({user, currentShow}) {
         ))
     )
 }
+
 export default AuditionsList;

@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function AuditionCard({audition, user}) {
 
-    const [newTime, setNewTime] = useState(audition.prefered_time)
+    const [newAvailability, setNewAvailability] = useState(audition.availability)
 
     function handleUpdate(id) {
         fetch(`/auditions/${id}`, {
@@ -10,7 +10,7 @@ function AuditionCard({audition, user}) {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ prefered_time: newTime }),
+          body: JSON.stringify({ availability: newAvailability }),
         });
     }
 
@@ -25,7 +25,8 @@ function AuditionCard({audition, user}) {
             <form onSubmit={() => handleUpdate(audition.id)}>
                 <div>Company: { audition.show.company}</div>
                 <div>Show: {audition.show.title}</div>
-                    Requested Time: <input defaultValue={audition.prefered_time} onChange={(e) => setNewTime(e.target.value)} ></input>&nbsp;
+                <div>Desired Role: {audition.desired_role}</div>
+                    Availability: <input defaultValue={audition.availability} onChange={(e) => setNewAvailability(e.target.value)} ></input>&nbsp;
                 <button class="border-white border-2">Edit</button>
                 <button onClick={() => handleDelete(audition.id)} class="border-white border-2">🗑️ Delete</button> 
             </form>

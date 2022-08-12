@@ -3,7 +3,10 @@ import { Link, useHistory } from "react-router-dom";
 
 function NewAudition({currentShow}) {
 
-    const [preferedTime, setPerferedTime] = useState("")
+    
+    const [fullName, setFullName] = useState("")
+    const [availability, setAvailability] = useState("")
+    const [desiredRole, setDesiredRole] = useState("")
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
@@ -17,8 +20,10 @@ function NewAudition({currentShow}) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            prefered_time: preferedTime,
             show_id: currentShow.id,
+            full_name: fullName,
+            desired_role: desiredRole,
+            availability: availability,
           }),
         }).then((r) => {
           setIsLoading(false);
@@ -32,18 +37,62 @@ function NewAudition({currentShow}) {
     
 
     return (
-        <>
-        <form onSubmit={handleSubmit}>
-            <input placeholder="Preferred timeslot" value={preferedTime} onChange={(e) => setPerferedTime(e.target.value)}></input>
-            <button>Submit</button>
-            <Link to="/">Cancel</Link>
-        </form>
-        <div>
-        {errors.map((err) => (
-          <div key={err}>{err}</div>
-        ))}
-      </div>
-      </>
+        <section class="h-full gradient-form bg-gray-200 md:h-screen">
+            <div class="container py-12 px-6 h-full">
+                <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
+                    <div class="xl:w-10/12">
+                        <div class="block bg-white shadow-lg rounded-lg">
+                            <div class="lg:flex lg:flex-wrap g-0">
+                                <div class="lg:w-6/12 px-4 md:px-0">
+                                    <div class="md:p-12 md:mx-6">
+                                        <form onSubmit={handleSubmit}>
+                                            <div class="mb-4">
+                                                <input  placeholder="Full Name" 
+                                                        value={fullName} 
+                                                        onChange={(e) => setFullName(e.target.value)} 
+                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                </input>
+                                            </div>
+                                            <div class="mb-4">
+                                                <input  placeholder="Audition Day Availability" 
+                                                        value={availability} 
+                                                        onChange={(e) => setAvailability(e.target.value)} 
+                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                </input>
+                                            </div>
+                                            <div class="mb-4">
+                                                <input  placeholder="Desired Role" 
+                                                        value={desiredRole} 
+                                                        onChange={(e) => setDesiredRole(e.target.value)} 
+                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                </input>
+                                            </div>
+                                            <div class="text-center pt-1 mb-4 pb-1">
+                                                <button class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3">Submit</button>
+                                            </div>
+                                            <div class="text-center pt-1 mb-12 pb-1">
+                                                <Link to="/" class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3">Cancel</Link>
+                                            </div>
+                                        </form>
+                                        <div>
+                                            {errors.map((err) => (
+                                            <div key={err}>{err}</div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-black lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none">
+                                    <div class="text-white px-4 py-6 md:p-12 md:mx-6">
+                                        <h4 class="text-xl font-semibold mb-6">Audition Form</h4>
+                                        <p class="text-sm">Please fill out all required fields </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     )
 }
 

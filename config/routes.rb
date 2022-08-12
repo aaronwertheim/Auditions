@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/shows', to: 'shows#index'
   post '/shows', to: 'shows#create'
+  get '/shows/:id/auditions', to: 'shows#show_with_auditions'
 
   
 end

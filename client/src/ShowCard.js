@@ -22,7 +22,7 @@ function ShowCard({show, user, setCurrentShow}) {
                             className="px-2 py-1 bg-black text-white h-fit rounded m-1 hover:bg-gray-300 hover:text-black border-2 border-black" >
                             Audition
                     </Link> : 
-                    <Link   to="/auditions-list-casting" 
+                    <Link   to={`/shows/${show.id}/auditions`}
                             onClick={() => setCurrentShow(show)}>
                             Submissions
                     </Link>}

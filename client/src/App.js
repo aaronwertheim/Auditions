@@ -41,7 +41,7 @@ function App() {
           <Route exact path="/new-audition">
             <NewAudition currentShow={currentShow}/>
           </Route>
-          <Route exact path="/auditions-list-casting">
+          <Route exact path="/shows/:id/auditions">
             <AuditionsListCasting user={user} currentShow={currentShow} />
           </Route>
         </Switch>

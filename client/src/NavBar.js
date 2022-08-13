@@ -13,24 +13,22 @@ function NavBar({ user, setUser }) {
 
     return (
         <nav class="flex items-center justify-between flex-wrap bg-black text-white p-6">
-            
-            <div class="flex items-center flex-shrink-0  mr-6">
+            <div class="flex items-center flex-shrink-0  ">
                 <img    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqPyn7GGPgHZw_rjM52BSBt4vhgq_pzQaig&usqp=CAU"
-                        class="fill-current h-10 w-10 mr-2 rounded"
+                        class="fill-current h-12 w-12 mr-12 ml-6 rounded "
                         alt="">
                 </img>
-                <span class="font-semibold text-xl tracking-tight">{ user.role === "Casting Director" ? "Casting Directors" : "Performers" }</span>
             </div>
 
             <div class="text-sm lg:flex-grow">
                     {user.role === "Casting Director" ? 
                         <>
-                            <Link to="/" class="block mt-4 lg:inline-block lg:mt-0 hover:text-teal-500 mr-4">My Castings Calls</Link> 
-                            <Link to="/new-show" class="block mt-4 lg:inline-block lg:mt-0 hover:text-teal-500 mr-4">Add a Show</Link> 
+                            <Link to="/" class="block mt-4 lg:inline-block lg:mt-0 hover:text-teal-500 mr-6">My Castings Calls</Link> 
+                            <Link to="/new-show" class="block mt-4 lg:inline-block lg:mt-0 hover:text-teal-500 mr-6">Add a Show</Link> 
                         </> :
                         <>
-                            <Link to="/" class="block mt-4 lg:inline-block lg:mt-0 mr-4 hover:text-teal-500">See All Casting Calls</Link>
-                            <Link to="/auditions-list" class="block mt-4 lg:inline-block lg:mt-0 hover:text-teal-500  mr-4">View My Auditions</Link>
+                            <Link to="/" class="block mt-4 lg:inline-block lg:mt-0 mr-6 hover:text-teal-500">See All Casting Calls</Link>
+                            <Link to="/auditions-list" class="block mt-4 lg:inline-block lg:mt-0 hover:text-teal-500  mr-6">View My Auditions</Link>
                         </>
                     }   
                     
@@ -40,8 +38,6 @@ function NavBar({ user, setUser }) {
                             Logout
                     </Link>
             </div>
-            
-
       </nav>
     );
   }

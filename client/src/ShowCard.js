@@ -6,7 +6,7 @@ function ShowCard({show, user, setCurrentShow}) {
                 <div  class="h-64 w-auto md:w-1/2  py-1">
                     <img    
                         src={show.poster_url}
-                        class=" h-full w-1/2 object-cover object-center m-auto border "
+                        class=" h-full w-1/2 object-cover object-center m-auto border rounded "
                         alt="">
                     </img>
                 </div>
@@ -24,11 +24,13 @@ function ShowCard({show, user, setCurrentShow}) {
                     </Link> : 
                     <>
                     <Link   to={`/shows/${show.id}/auditions`}
-                            onClick={() => setCurrentShow(show)}>
+                            onClick={() => setCurrentShow(show)}
+                            className="px-2 py-1  h-fit rounded m-1 hover:bg-gray-300 text-gray-700 border" >
                             Submissions
                     </Link>
                     <Link   to={`/shows/${show.id}`}
-                            onClick={() => setCurrentShow(show)}>  
+                            onClick={() => setCurrentShow(show)}
+                            className="px-2 py-1  h-fit rounded m-1 hover:bg-gray-300 text-gray-700 border" >  
                             ✏️
                     </Link>
                     </>}

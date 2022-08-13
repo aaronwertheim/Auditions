@@ -56,28 +56,28 @@ function EditShow({currentShow}) {
                                                     <input  
                                                             defaultValue={show.title} 
                                                             onChange={(e) => setNewTitle(e.target.value)} 
-                                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                     </input>
                                                 </div>
                                                 <div class="mb-4">
                                                     <input   
                                                             defaultValue={show.poster_url} 
                                                             onChange={(e) => setNewPosterUrl(e.target.value)} 
-                                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                     </input>
                                                 </div>
                                                 <div class="mb-4">
                                                     <input  
                                                             defaultValue={show.company} 
                                                             onChange={(e) => setNewCompany(e.target.value)} 
-                                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                     </input>
                                                 </div>
                                                 <div class="mb-4">
                                                     <textarea    
                                                                 defaultValue={show.description} 
                                                                 onChange={(e) => setNewDescription(e.target.value)} 
-                                                                class="form-control block w-full h-40 resize-none px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                                                                class="form-control block w-full h-40 resize-none px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                     </textarea>
                                                 </div>
                                                 <div class="text-center pt-1 mb-12 pb-1">
@@ -88,9 +88,9 @@ function EditShow({currentShow}) {
                                                 </div>
                                                 <div class="text-center pt-1 pb-1">
                                                     <button type="submit" 
-                                                            class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3"
+                                                            class="inline-block px-6 py-2.5 bg-red-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3"
                                                             onClick={() => handleDelete(id)}>
-                                                            Remove this show
+                                                            Remove this casting
                                                     </button>
                                                 </div>
                                             </form>
@@ -98,11 +98,10 @@ function EditShow({currentShow}) {
                                     </div>
                                     <div class="lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none bg-black">
                                         <div class="text-white px-4 py-6 md:p-12 md:mx-6">
-                                            <h4 class="text-xl font-semibold mb-6">Edit Your Show</h4>
-                                            <p class="text-sm">Please fill out any neccessary changes. Any changes you don't need to make, can be left as is.</p>
+                                            <h4 class="text-xl font-semibold mb-6">Edit Your Casting</h4>
+                                            <p class="text-sm">I have heard That guilty creatures sitting at a play, Have, by the very cunning of the scene, Been struck so to the soul that presently They have proclaim'd their malefactions; For murder, though it have no tongue, will speak. With most miraculous organ. The play's the thing Wherein I'll catch the conscience of the king.</p>
                                         </div>
-                                    </div>
-                                    
+                                    </div>    
                                 </div>
                             </div>
                         </div>

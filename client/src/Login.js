@@ -21,7 +21,6 @@ function Login({ onLogin }) {
                                             src="https://www.creativefabrica.com/wp-content/uploads/2021/01/15/two-theatre-mask-face-logo-isolated-Graphics-7791379-1-1-580x387.jpg"
                                             alt="logo"
                                         />
-                                        <h4 class="text-xl font-semibold mt-1 mb-12 pb-1">Welcome</h4>
                                     </div>
                                     
                                     {showLogin ? (
@@ -56,12 +55,9 @@ function Login({ onLogin }) {
                             </div>
                             <div class="lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none bg-black">
                                 <div class="text-white px-4 py-6 md:p-12 md:mx-6">
-                                    <h4 class="text-xl font-semibold mb-6">Our Motto</h4>
+                                    <h4 class="text-xl font-semibold mb-6">Welcome to the Performance Database!</h4>
                                     <p class="text-sm">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat.
+                                    Speak the speech, I pray you, as I pronounced it to you-trippingly on the tongue; but if you mouth it, as many of your players do, I had as lief the town-crier spoke my lines. Nor do not saw the air too much with your hand, thus, but use all gently; for in the very torrent, tempest, and as I may say, the whirlwind of your passion, you must acquire and beget a temperance that may give it smoothness.
                                     </p>
                                 </div>
                             </div>

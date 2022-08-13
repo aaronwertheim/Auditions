@@ -12,6 +12,8 @@ function AuditionsList({user}) {
         .then(auditionsArray => setAuditions(auditionsArray) )
       },[])
       
+
+    if (auditions.length === 0) return (<div class="text-center font-serif  uppercase text-4xl xl:text-5xl  mt-20">You currently have no upcoming auditions</div>)
     return (
         <div class="mx-auto bg-gray-200 h-screen px-8 w-full">
              <div class="w-full sm:w-3/4 md:w-1/2 lg:w-3/5 bg-gray-200">

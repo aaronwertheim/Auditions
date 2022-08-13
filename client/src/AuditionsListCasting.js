@@ -13,13 +13,15 @@ function AuditionsListCasting({currentShow}) {
     },[])
        
     return (
-        auditions?.map(audition => (
-            <div> 
-                <h1>Name: {audition.full_name}</h1>
-                <h1>Availability: {audition.availability}</h1>
-                <h1>Desired Role: {audition.desired_role}</h1>
+        <div class="w-max ">
+        {auditions?.map(audition => (
+            <div class="border-2 border-white rounded m-4"> 
+                <div class=" p-2 "><span class="text-lg">Name: </span> {audition.full_name}</div>
+                <div class=" p-2 bg-white"><span class="text-lg">Availability: </span> {audition.availability}</div>
+                <div class=" p-2"><span class="text-lg">Desired Role: </span>{audition.desired_role}</div>
             </div>
-        ))
+        ))}
+        </div>
     )      
 }
 

@@ -5,7 +5,6 @@ function AuditionsList({user}) {
 
     const [auditions, setAuditions] = useState([]);
     
-
     
     useEffect(() => {
         fetch("/auditions")

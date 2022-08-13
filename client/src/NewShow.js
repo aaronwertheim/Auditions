@@ -81,6 +81,7 @@ function NewShow({user}) {
                                                         Submit
                                                 </button>
                                             </div>
+                                            
                                         </form>
                                     </div>
                                 </div>

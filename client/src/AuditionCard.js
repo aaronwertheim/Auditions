@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function AuditionCard({audition, user}) {
 
-    const [newAvailability, setNewAvailability] = useState(audition.availability)
+    const [newAuditionTime, setNewAuditionTime] = useState(audition.audition_time)
 
     function handleUpdate(id) {
         fetch(`/auditions/${id}`, {
@@ -10,7 +10,7 @@ function AuditionCard({audition, user}) {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ availability: newAvailability }),
+          body: JSON.stringify({ audition_time: newAuditionTime }),
         });
     }
 
@@ -30,10 +30,11 @@ function AuditionCard({audition, user}) {
                     <h1 class="text-4xl font-bold leading-none tracking-tight text-white">{audition.show.title} - {audition.desired_role}</h1>
                     <form class=" mt-10 text-white " onSubmit={() => handleUpdate(audition.id)}>
                        <div class="flex flex-col" > 
-                            <div class="text-lg"> Availability: </div>
-                            <input  class=" border border-black rounded p-1 w-2/5 text-black " 
-                                    defaultValue={audition.availability} 
-                                    onChange={(e) => setNewAvailability(e.target.value)}>
+                            <div class="text-lg"> Audition Time:</div>
+                            <input  type="time"
+                                    class=" border border-black rounded p-1 w-2/5 text-black " 
+                                    defaultValue={audition.audition_time} 
+                                    onChange={(e) => setNewAuditionTime(e.target.value)}>
                             </input>
                             <div><button class="border border-white rounded p-1 hover:bg-white hover:text-black mr-4">Edit ✏️</button>
                             <button class="mt-2 border border-white rounded p-1 hover:bg-white hover:text-black" onClick={() => handleDelete(audition.id)}>Cancel Audition</button></div>

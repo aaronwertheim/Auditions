@@ -23,7 +23,7 @@ function AuditionsList({user}) {
                     ))}
                 </div>
             </div>
-            <div class="bg-white border-2 border-l-gray-600 text-center w-1/6 overflow-x-hidden "></div>
+            <div class="bg-white border-2 border-l-gray-600 text-center w-1/6 min-h-screen overflow-x-hidden "></div>
         </div>
     )
 }

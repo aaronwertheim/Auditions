@@ -16,9 +16,22 @@ function AuditionsListCasting({currentShow}) {
         <div class="w-max ">
         {auditions?.map(audition => (
             <div class="border-2 border-white rounded m-4"> 
-                <div class=" p-2 "><span class="text-lg">Name: </span> {audition.full_name}</div>
-                <div class=" p-2 bg-white"><span class="text-lg">Availability: </span> {audition.availability}</div>
-                <div class=" p-2"><span class="text-lg">Desired Role: </span>{audition.desired_role}</div>
+                <div class=" p-2 ">
+                    <span class="text-lg">Name:</span> 
+                    {audition.full_name}
+                </div>
+                <div class=" p-2 bg-white">
+                    <span class="text-lg">Audition Time:</span>
+                    <input  type="time" 
+                            disabled="true" 
+                            value={audition.audition_time} 
+                            class="bg-white">
+                    </input>
+                </div>
+                <div class=" p-2">
+                    <span class="text-lg">Desired Role: </span>
+                    {audition.desired_role}
+                </div>
             </div>
         ))}
         </div>

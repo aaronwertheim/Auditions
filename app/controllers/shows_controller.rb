@@ -21,7 +21,7 @@ class ShowsController < ApplicationController
 
     def show_with_auditions
         show = Show.find(params[:id])
-        render json: show.auditions
+        render json: show.auditions.order(:audition_time)
     end
 
     def destroy

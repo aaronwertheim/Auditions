@@ -12,6 +12,7 @@ function ShowCard({show, user, setCurrentShow}) {
                 </div>
                 <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
                     <h2 class="font-semibold text-lg leading-tight truncate">{show.title}</h2>
+                    <p>{show.audition_date}</p>
                     <p class="mt-2 h-40 px-3 py-1.5 overflow-scroll border shadow-md rounded">{show.description}</p>
                     <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">{show.company}</p>
                 </div>

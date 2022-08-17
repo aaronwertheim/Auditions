@@ -2,7 +2,7 @@ class ShowsController < ApplicationController
     skip_before_action :authorize
 
     def index
-        render json: Show.all
+        render json: Show.order(:audition_date)
     end
 
     def show
@@ -34,6 +34,6 @@ class ShowsController < ApplicationController
     private
     
     def show_params
-        params.permit(:title, :poster_url, :company, :description, :user_id)
+        params.permit(:title, :poster_url, :company, :description, :user_id, :audition_date)
     end
 end

@@ -6,7 +6,7 @@ class CreateShows < ActiveRecord::Migration[7.0]
       t.string :poster_url
       t.integer :user_id
       t.text :description
-
+      t.date :audition_date
       t.timestamps
     end
   end

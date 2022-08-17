@@ -28,6 +28,7 @@ function AuditionCard({audition, user}) {
                </div>
                 <div class="p-4 font-normal bg-black text-white md:w-3/4">
                     <h1 class="text-4xl font-bold leading-none tracking-tight text-white">{audition.show.title} - {audition.desired_role}</h1>
+                    <div>{audition.show.audition_date}</div>
                     <form class=" mt-10 text-white " onSubmit={() => handleUpdate(audition.id)}>
                        <div class="flex flex-col" > 
                             <div class="text-lg"> Audition Time:</div>

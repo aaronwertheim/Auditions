@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 
 function NewShow({user}) {
     const [title, setTitle] = useState("")
+    const [date, setDate] = useState()
     const [posterUrl, setPosterUrl] = useState("")
     const [company, setCompany] = useState("")
     const [description, setDescription] = useState("")
@@ -25,6 +26,7 @@ function NewShow({user}) {
             company: company,
             description: description,
             user_id: user.id,
+            audition_date: date
           }),
         }).then((r) => {
           setIsLoading(false);
@@ -51,6 +53,13 @@ function NewShow({user}) {
                                                 <input  placeholder="Title" 
                                                         value={title} 
                                                         onChange={(e) => setTitle(e.target.value)} 
+                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                </input>
+                                            </div>
+                                            <div class="mb-4">
+                                                <input  type="date"
+                                                        value={date} 
+                                                        onChange={(e) => setDate(e.target.value)}
                                                         class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                 </input>
                                             </div>

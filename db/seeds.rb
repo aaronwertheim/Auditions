@@ -1,13 +1,13 @@
 User.create(username:"Aaron Wertheim", password:"a", password_confirmation:"a", role:"Casting Director")
 User.create(username:"Leah Davis", password:"a", password_confirmation:"a", role:"Casting Director")
-User.create(username:"Paul Ling", password: "a", password_confirmation: "a", role: "Performer")
-User.create(username:"Justin Ramon", password: "a", password_confirmation: "a", role: "Performer")
-User.create(username:"Alex Wenner", password: "a", password_confirmation: "a", role: "Performer")
-User.create(username:"James Kyan", password: "a", password_confirmation: "a", role: "Performer")
-User.create(username:"Ian Murphy", password: "a", password_confirmation: "a", role: "Performer")
-User.create(username:"Lori Henderson", password: "a", password_confirmation: "a", role: "Performer")
-User.create(username:"Victor Zarour", password: "a", password_confirmation: "a", role: "Performer")
-User.create(username:"Joon Jung", password: "a", password_confirmation: "a", role: "Performer")
+# User.create(username:"Paul Ling", password: "a", password_confirmation: "a", role: "Performer")
+# User.create(username:"Justin Ramon", password: "a", password_confirmation: "a", role: "Performer")
+# User.create(username:"Alex Wenner", password: "a", password_confirmation: "a", role: "Performer")
+# User.create(username:"James Kyan", password: "a", password_confirmation: "a", role: "Performer")
+# User.create(username:"Ian Murphy", password: "a", password_confirmation: "a", role: "Performer")
+# User.create(username:"Lori Henderson", password: "a", password_confirmation: "a", role: "Performer")
+# User.create(username:"Victor Zarour", password: "a", password_confirmation: "a", role: "Performer")
+# User.create(username:"Joon Jung", password: "a", password_confirmation: "a", role: "Performer")
 
 
 

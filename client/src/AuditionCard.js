@@ -32,6 +32,9 @@ function AuditionCard({audition, user}) {
                        <div class="flex flex-col" > 
                             <div class="text-lg"> Audition Time:</div>
                             <input  type="time"
+                                    min="09:00" 
+                                    max="17:00"  
+                                    step="300" 
                                     class=" border border-black rounded p-1 w-2/5 text-black " 
                                     defaultValue={audition.audition_time} 
                                     onChange={(e) => setNewAuditionTime(e.target.value)}>

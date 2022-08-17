@@ -7,6 +7,9 @@ class CreateShows < ActiveRecord::Migration[7.0]
       t.integer :user_id
       t.text :description
       t.date :audition_date
+      t.string :start_time
+      t.string :end_time
+      t.integer :timeslot
       t.timestamps
     end
   end

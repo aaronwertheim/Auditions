@@ -4,8 +4,7 @@ class AuditionsController < ApplicationController
     end
 
     def create
-        audition = @current_user.auditions.create!(audition_params)
-        render json: audition, status: :created
+        render json: @current_user.auditions.create!(audition_params)
     end
 
     def update

@@ -7,6 +7,9 @@ function NewShow({user}) {
     const [posterUrl, setPosterUrl] = useState("")
     const [company, setCompany] = useState("")
     const [description, setDescription] = useState("")
+    const [startTime, setStartTime] = useState()
+    const [endTime, setEndTime] = useState()
+    const [timeslot, setTimeslot] = useState()
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
@@ -26,7 +29,10 @@ function NewShow({user}) {
             company: company,
             description: description,
             user_id: user.id,
-            audition_date: date
+            audition_date: date,
+            start_time: startTime,
+            end_time: endTime,
+            timeslot: timeslot,
           }),
         }).then((r) => {
           setIsLoading(false);
@@ -57,7 +63,9 @@ function NewShow({user}) {
                                                 </input>
                                             </div>
                                             <div class="mb-4">
-                                                <input  type="date"
+                                                <input  type="text"
+                                                        placeholder="Audition date"
+                                                        onFocus={(e) => e.target.type = "date"}
                                                         value={date} 
                                                         onChange={(e) => setDate(e.target.value)}
                                                         class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
@@ -84,13 +92,40 @@ function NewShow({user}) {
                                                             class="form-control block w-full h-40 resize-none px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                 </textarea>
                                             </div>
+                                            <div class="mb-4">
+                                                <input  type="text"
+                                                        placeholder="Audition start time"
+                                                        value={startTime}
+                                                        onChange={(e) => setStartTime(e.target.value)}
+                                                        onFocus={(e) => e.target.type = "time"}
+                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                </input>
+                                            </div>
+                                            <div class="mb-4">
+                                                <input  type="text"
+                                                        placeholder="Audition end time"
+                                                        value={endTime}
+                                                        onChange={(e) => setEndTime(e.target.value)}
+                                                        onFocus={(e) => e.target.type = "time"}
+                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                </input>
+                                            </div>
+                                            <div class="mb-4">
+                                                <input  type="text"
+                                                        placeholder="Timeslot length for each audition (minutes)"
+                                                        value={timeslot}
+                                                        onChange={(e) => setTimeslot(e.target.value)}
+                                                        onFocus={(e) => e.target.type = "number"}
+                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                </input>
+                                            </div>
                                             <div class="text-center pt-1 mb-12 pb-1">
                                                 <button type="submit" 
                                                         class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3">
                                                         Submit
                                                 </button>
                                             </div>
-                                            
+                                           
                                         </form>
                                     </div>
                                 </div>

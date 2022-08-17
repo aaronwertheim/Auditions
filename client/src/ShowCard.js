@@ -4,17 +4,28 @@ function ShowCard({show, user, setCurrentShow}) {
     return (
             <div class="flex flex-col md:flex-row overflow-hidden bg-white rounded-lg shadow-xl  mt-4 w-100  mx-2">
                 <div  class="h-64 w-auto md:w-1/2  py-1">
+                    {show.poster_url ? 
                     <img    
                         src={show.poster_url}
                         class=" h-full w-1/2 object-cover object-center m-auto border rounded shadow"
                         alt="">
-                    </img>
+                    </img> :
+                    <img    
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqPyn7GGPgHZw_rjM52BSBt4vhgq_pzQaig&usqp=CAU"
+                    class=" h-full w-1/2 object-cover object-center m-auto border rounded shadow"
+                    alt="">
+                </img>
+                }
+                    
+                    
                 </div>
                 <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
                     <h2 class="font-semibold text-lg leading-tight truncate">{show.title}</h2>
                     <p>{show.audition_date}</p>
                     <p class="mt-2 h-40 px-3 py-1.5 overflow-scroll border shadow-md rounded">{show.description}</p>
                     <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">{show.company}</p>
+                    <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">Auditions: <input class="bg-transparent mr-0" disabled={true} value={show.start_time} type="time"></input>-<input class="bg-transparent ml-10" disabled={true} value={show.end_time} type="time"></input></p> 
+                    <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">{show.timeslot} minute timeslots</p>
                 </div>
                 
                 {user.role === "Performer" ? 

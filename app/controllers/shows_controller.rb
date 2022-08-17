@@ -34,6 +34,6 @@ class ShowsController < ApplicationController
     private
     
     def show_params
-        params.permit(:title, :poster_url, :company, :description, :user_id, :audition_date)
+        params.permit(:title, :poster_url, :company, :description, :user_id, :audition_date, :start_time, :end_time, :timeslot)
     end
 end

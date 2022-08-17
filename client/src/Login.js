@@ -18,7 +18,7 @@ function Login({ onLogin }) {
                                     <div class="text-center">
                                         <img
                                             class="mx-auto w-48"
-                                            src="https://www.creativefabrica.com/wp-content/uploads/2021/01/15/two-theatre-mask-face-logo-isolated-Graphics-7791379-1-1-580x387.jpg"
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqPyn7GGPgHZw_rjM52BSBt4vhgq_pzQaig&usqp=CAU"
                                             alt="logo"
                                         />
                                     </div>

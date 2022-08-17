@@ -11,13 +11,12 @@ function ShowCard({show, user, setCurrentShow}) {
                         alt="">
                     </img> :
                     <img    
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqPyn7GGPgHZw_rjM52BSBt4vhgq_pzQaig&usqp=CAU"
-                    class=" h-full w-1/2 object-cover object-center m-auto border rounded shadow"
-                    alt="">
-                </img>
-                }
-                    
-                    
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqPyn7GGPgHZw_rjM52BSBt4vhgq_pzQaig&usqp=CAU"
+                        class=" h-full w-1/2 object-cover object-center m-auto border rounded shadow"
+                        alt="">
+                    </img>
+                    }
+                       
                 </div>
                 <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
                     <h2 class="font-semibold text-lg leading-tight truncate">{show.title}</h2>

@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useHistory, useParams } from "react-router-dom";
+
 
 function NewAudition({currentShow}) {
 
@@ -10,6 +11,13 @@ function NewAudition({currentShow}) {
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
+    const [show, setShow] = useState(currentShow); 
+    const {id} = useParams() 
+    useEffect(() => {
+        fetch(`/shows/${id}`)
+        .then(r => r.json())
+        .then(array =>setShow(array))
+    },[])
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -20,7 +28,7 @@ function NewAudition({currentShow}) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            show_id: currentShow.id,
+            show_id: show.id,
             full_name: fullName,
             desired_role: desiredRole,
             audition_time: auditionTime,
@@ -55,11 +63,13 @@ function NewAudition({currentShow}) {
                                             </div>
                                             <div class="mb-4">
                                                 <input  value={auditionTime} 
-                                                        type="time" 
+                                                        type="text"
+                                                        placeholder={"Time (" + show.timeslot + " minute increments)"} 
+                                                        onFocus={(e) => e.target.type = "time"}
                                                         onChange={(e) => setAuditionTime(e.target.value)} 
-                                                        min={currentShow.start_time} 
-                                                        max={currentShow.end_time}  
-                                                        step={currentShow.timeslot * 60} 
+                                                        min={show.start_time} 
+                                                        max={show.end_time}  
+                                                        step={show.timeslot * 60} 
                                                         class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">                                                
                                                 </input>
                                             </div>

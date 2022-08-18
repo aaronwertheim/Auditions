@@ -40,7 +40,7 @@ function App() {
           <Route exact path="/auditions-list">
             <AuditionsList user={user} />
           </Route>
-          <Route exact path="/new-audition">
+          <Route exact path="/new-audition/:id">
             <NewAudition currentShow={currentShow}/>
           </Route>
           <Route exact path="/shows/:id/auditions">

@@ -28,12 +28,10 @@ function Login({ onLogin }) {
                                         <LoginForm onLogin={onLogin} />
                                         <div class="flex items-center justify-between pb-6">
                                             <p class="mb-0 mr-2"> Don't have an account? </p>
-                                                <button 
-                                                    onClick={() => setShowLogin(false)}
-                                                    type="button"
-                                                    class="inline-block px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-                                                >
-                                                Sign Up
+                                                <button onClick={() => setShowLogin(false)}
+                                                        type="button"
+                                                        class="inline-block px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
+                                                        Sign Up
                                                 </button>
                                         </div>
                                         </>
@@ -42,11 +40,9 @@ function Login({ onLogin }) {
                                         <SignUpForm onLogin={onLogin} />
                                         <div class="flex items-center justify-between pb-6">
                                             <p class="mb-0 mr-2"> Already have an account? </p>
-                                                <button 
-                                                    onClick={() => setShowLogin(true)}
-                                                    class="inline-block px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-                                                    >
-                                                Log In
+                                                <button onClick={() => setShowLogin(true)}
+                                                        class="inline-block px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
+                                                        Log In
                                                 </button>
                                         </div>
                                         </>
@@ -55,10 +51,8 @@ function Login({ onLogin }) {
                             </div>
                             <div class="lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none bg-black">
                                 <div class="text-white px-4 py-6 md:p-12 md:mx-6">
-                                    <h4 class="text-xl font-semibold mb-6">Welcome to the Performance Database!</h4>
-                                    <p class="text-sm">
-                                    Speak the speech, I pray you, as I pronounced it to you-trippingly on the tongue; but if you mouth it, as many of your players do, I had as lief the town-crier spoke my lines. Nor do not saw the air too much with your hand, thus, but use all gently; for in the very torrent, tempest, and as I may say, the whirlwind of your passion, you must acquire and beget a temperance that may give it smoothness.
-                                    </p>
+                                    <h4 class="text-xl font-semibold mb-6">Welcome to the Casting Database!</h4>
+                                    <p class="text-sm italic"> Speak the speech, I pray you, as I pronounced it to you-trippingly on the tongue; but if you mouth it, as many of your players do, I had as lief the town-crier spoke my lines. Nor do not saw the air too much with your hand, thus, but use all gently; for in the very torrent, tempest, and as I may say, the whirlwind of your passion, you must acquire and beget a temperance that may give it smoothness.</p>
                                 </div>
                             </div>
                         </div>

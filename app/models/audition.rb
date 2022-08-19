@@ -4,7 +4,6 @@ class Audition < ApplicationRecord
     has_one_attached :headshot
     has_one_attached :resume
 
-    validates :full_name, presence: true
     validates :audition_time, presence: true, uniqueness: {scope: :show_id}
     validates :user_id, uniqueness: {scope: :show_id}
    

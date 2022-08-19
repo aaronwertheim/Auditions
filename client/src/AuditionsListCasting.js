@@ -36,7 +36,7 @@ function AuditionsListCasting({currentShow}) {
                                         </td>
 
                                         <td class="px-2 py-2.5 whitespace-no-wrap">
-                                            <div class="leading-5 text-gray-500 font-medium">{audition.full_name} - 
+                                            <div class="leading-5 text-gray-500 font-medium">{audition.user.first_name + " " + audition.user.last_name} - 
                                             <Link to={`/headshot/${audition.id}`}> 
                                                 <a class="text-blue-500 hover:underline text-xs" href="#"> headshot -</a> 
                                             </Link> 

@@ -4,8 +4,6 @@ import { Link, useHistory, useParams } from "react-router-dom";
 
 function NewAudition({currentShow}) {
 
-    
-    const [fullName, setFullName] = useState("")
     const [auditionTime, setAuditionTime] = useState()
     const [desiredRole, setDesiredRole] = useState("")
     const [headshot, setHeadshot] = useState("")
@@ -22,10 +20,10 @@ function NewAudition({currentShow}) {
 
         const handleSubmit = (e) => {
            e.preventDefault()
-           if (!headshot) return alert('Please add headshot') 
+           if (!headshot) return alert('Please Add Headshot') 
+           if (!resume) return alert('Please Add Resume')
            const formData = new FormData()
            formData.append('audition[show_id]', show.id)
-           formData.append('audition[full_name]', e.target.fullname.value)
            formData.append('audition[audition_time]', e.target.auditiontime.value)
            formData.append('audition[desired_role]', e.target.desiredrole.value)
            formData.append('audition[headshot]', e.target.fileInput.files[0])
@@ -53,14 +51,7 @@ function NewAudition({currentShow}) {
                                 <div class="lg:w-6/12 px-4 md:px-0">
                                     <div class="md:p-12 md:mx-6">
                                         <form onSubmit={handleSubmit}>
-                                            <div class="mb-4">
-                                                <input  placeholder="Full Name"
-                                                        name="fullname" 
-                                                        value={fullName} 
-                                                        onChange={(e) => setFullName(e.target.value)} 
-                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
-                                                </input>
-                                            </div>
+                                            
                                             <div class="mb-4">
                                                 <input  value={auditionTime} 
                                                         type="text"
@@ -121,7 +112,7 @@ function NewAudition({currentShow}) {
                                 <div class="bg-black lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none">
                                     <div class="text-white px-4 py-6 md:p-12 md:mx-6">
                                         <h4 class="text-xl font-semibold mb-6">Audition Form</h4>
-                                        <p class="text-sm">Suit the action to the word, the word to the action; with this special observance, that you o'erstep not the modesty of nature: for anything so overdone is from the purpose of playing, whose end, both at the first and now, was and is, to hold, as 'twere, the mirror up to nature; to show Virtue her own feature, scorn her own image, and the very age and body of the time his form and pressure.</p>
+                                        <p class="text-sm italic">Suit the action to the word, the word to the action; with this special observance, that you o'erstep not the modesty of nature: for anything so overdone is from the purpose of playing, whose end, both at the first and now, was and is, to hold, as 'twere, the mirror up to nature; to show Virtue her own feature, scorn her own image, and the very age and body of the time his form and pressure.</p>
                                     </div>
                                 </div>
                             </div>

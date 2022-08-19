@@ -9,6 +9,7 @@ import AuditionsList from "./AuditionsList";
 import NewAudition from "./NewAudition";
 import AuditionsListCasting from "./AuditionsListCasting";
 import EditShow from "./EditShow";
+import Headshot from "./Headshot";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -48,6 +49,9 @@ function App() {
           </Route>
           <Route exact path={"/shows/:id"}>
             <EditShow currentShow={currentShow} />
+          </Route>
+          <Route exact path={"/headshot/:id"}>
+            <Headshot />
           </Route>
         </Switch>
     </BrowserRouter>

@@ -3,6 +3,10 @@ class AuditionsController < ApplicationController
         render json: @current_user.auditions
     end
 
+    def show
+        render json: Audition.find(params[:id])
+    end
+
     def create
         render json: @current_user.auditions.create!(audition_params)
     end
@@ -22,6 +26,6 @@ class AuditionsController < ApplicationController
     private
 
     def audition_params
-        params.permit(:show_id, :user_id, :full_name, :desired_role, :audition_time)
+        params.require(:audition).permit(:show_id, :user_id, :full_name, :desired_role, :audition_time, :headshot)
     end
 end

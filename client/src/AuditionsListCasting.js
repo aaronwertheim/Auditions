@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function AuditionsListCasting({currentShow}) {
     
@@ -37,7 +37,9 @@ function AuditionsListCasting({currentShow}) {
 
                                         <td class="px-2 py-2.5 whitespace-no-wrap">
                                             <div class="leading-5 text-gray-500 font-medium">{audition.full_name} - 
-                                                <a class="text-blue-500 hover:underline" href="#">headshot/resume</a>
+                                            <Link to={`/headshot/${audition.id}`}> 
+                                                <a class="text-blue-500 hover:underline text-xs" href="#"> headshot</a> 
+                                            </Link> 
                                             </div>
                                             <div class="leading-5 text-gray-900">Role: {audition.desired_role}</div>      
                                         </td>

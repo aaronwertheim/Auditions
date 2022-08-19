@@ -8,6 +8,7 @@ function NewAudition({currentShow}) {
     const [fullName, setFullName] = useState("")
     const [auditionTime, setAuditionTime] = useState()
     const [desiredRole, setDesiredRole] = useState("")
+    const [headshot, setHeadshot] = useState("")
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
@@ -19,29 +20,51 @@ function NewAudition({currentShow}) {
         .then(array =>setShow(array))
     },[])
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        setIsLoading(true);
-        fetch("/auditions", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            show_id: show.id,
-            full_name: fullName,
-            desired_role: desiredRole,
-            audition_time: auditionTime,
-          }),
-        }).then((r) => {
-          setIsLoading(false);
-          if (r.ok) {
-            history.push("/auditions-list");
-          } else {
-            r.json().then((err) => setErrors(err.errors));
-          }
-        });
-      }
+    // function handleSubmit(e) {
+    //     e.preventDefault();
+    //     setIsLoading(true);
+    //     fetch("/auditions", {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({
+    //         show_id: show.id,
+    //         full_name: fullName,
+    //         desired_role: desiredRole,
+    //         audition_time: auditionTime,
+    //       }),
+        // }).then((r) => {
+        //   setIsLoading(false);
+        //   if (r.ok) {
+        //     history.push("/auditions-list");
+        //   } else {
+        //     r.json().then((err) => setErrors(err.errors));
+        //   }
+        // });
+    //   }
+
+    
+        const handleSubmit = (e) => {
+           e.preventDefault()
+           if (!headshot) return alert('Please add headshot') 
+           const formData = new FormData()
+           formData.append('audition[show_id]', show.id)
+           formData.append('audition[full_name]', e.target.fullname.value)
+           formData.append('audition[audition_time]', e.target.auditiontime.value)
+           formData.append('audition[desired_role]', e.target.desiredrole.value)
+           formData.append('audition[headshot]', e.target.fileInput.files[0])
+           fetch('/auditions', {
+              method: "POST",
+              body: formData
+           }).then((r) => {
+            if (r.ok) {
+              history.push("/auditions-list");
+            } else {
+              r.json().then((err) => setErrors(err.errors));
+            }
+          });
+        }
     
 
     return (
@@ -55,7 +78,8 @@ function NewAudition({currentShow}) {
                                     <div class="md:p-12 md:mx-6">
                                         <form onSubmit={handleSubmit}>
                                             <div class="mb-4">
-                                                <input  placeholder="Full Name" 
+                                                <input  placeholder="Full Name"
+                                                        name="fullname" 
                                                         value={fullName} 
                                                         onChange={(e) => setFullName(e.target.value)} 
                                                         class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
@@ -64,6 +88,7 @@ function NewAudition({currentShow}) {
                                             <div class="mb-4">
                                                 <input  value={auditionTime} 
                                                         type="text"
+                                                        name="auditiontime"
                                                         placeholder={"Time (" + show.timeslot + " minute increments)"} 
                                                         onFocus={(e) => e.target.type = "time"}
                                                         onChange={(e) => setAuditionTime(e.target.value)} 
@@ -75,9 +100,21 @@ function NewAudition({currentShow}) {
                                             </div>
                                             <div class="mb-4">
                                                 <input  placeholder="Desired Role" 
+                                                        name="desiredrole"
                                                         value={desiredRole} 
                                                         onChange={(e) => setDesiredRole(e.target.value)} 
                                                         class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                </input>
+                                            </div>
+                                            <div class="mb-4">
+                                                <input  type="text"
+                                                        placeholder="Upload Headshot"
+                                                        name="fileInput"
+                                                        accept="image/jpeg"
+                                                        value={headshot} 
+                                                        onChange={(e) => setHeadshot(e.target.value)} 
+                                                        onFocus={(e) => e.target.type = "file"}
+                                                        class="cursor-pointer form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                 </input>
                                             </div>
                                             <div class="mb-4">

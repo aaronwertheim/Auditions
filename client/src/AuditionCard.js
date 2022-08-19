@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AuditionCard({audition, user}) {
+function AuditionCard({audition}) {
 
     const [newAuditionTime, setNewAuditionTime] = useState(audition.audition_time)
 

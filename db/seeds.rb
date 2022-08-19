@@ -1,12 +1,12 @@
-User.create(username:"Aaron Wertheim", password:"a", password_confirmation:"a", role:"Casting Director")
-User.create(username:"Leah Davis", password:"a", password_confirmation:"a", role:"Casting Director")
-User.create(username:"Paul Ling", password: "a", password_confirmation: "a", role: "Performer")
-User.create(username:"Justin Ramon", password: "a", password_confirmation: "a", role: "Performer")
-User.create(username:"Alex Wenner", password: "a", password_confirmation: "a", role: "Performer")
-User.create(username:"James Kyan", password: "a", password_confirmation: "a", role: "Performer")
-User.create(username:"Ian Murphy", password: "a", password_confirmation: "a", role: "Performer")
-User.create(username:"Lori Henderson", password: "a", password_confirmation: "a", role: "Performer")
-User.create(username:"Victor Zarour", password: "a", password_confirmation: "a", role: "Performer")
+User.create(username:"Marty Wertheim", password:"a", password_confirmation:"a", role:"Casting Director")
+User.create(username:"Paul Ling", password:"a", password_confirmation:"a", role:"Casting Director")
+User.create(username:"Aaron Wertheim", password: "a", password_confirmation: "a", role: "Performer")
+User.create(username:"Kevin Pellicone", password: "a", password_confirmation: "a", role: "Performer")
+User.create(username:"Bear Lile", password: "a", password_confirmation: "a", role: "Performer")
+User.create(username:"Kevin Keeling", password: "a", password_confirmation: "a", role: "Performer")
+User.create(username:"Bobby Bowman", password: "a", password_confirmation: "a", role: "Performer")
+User.create(username:"Ian Maryfield", password: "a", password_confirmation: "a", role: "Performer")
+User.create(username:"Brennan Roach", password: "a", password_confirmation: "a", role: "Performer")
 User.create(username:"Joon Jung", password: "a", password_confirmation: "a", role: "Performer")
 
 
@@ -22,13 +22,13 @@ Show.create(start_time: "11:00", end_time: "17:00", timeslot: 20, audition_date:
 Show.create(start_time: "08:00", end_time: "18:00", timeslot: 5, audition_date: "2022-09-29", title: "2022 Season", poster_url: "https://www.theatreinchicago.com/images/casting/chicago-carolers.jpg", company: "The Chicago Carolers", description: "The Chicago Carolers are seeking new members to join us for the 2022 season! We are a group of professional singers and actors from the Chicagoland area. We sing carols of all kinds (traditional carols to modern favorites) in four-part harmony, and all of our carols are memorized. We dress in full Victorian costumes, and always bring a cheerful holiday spirit to events! We are currently looking for Sopranos, Altos, Tenors, and Basses to join our quartets.", user_id: 2)
 
 
-Audition.create(full_name: "Paul Ling", desired_role: "Lead", audition_time: "11:00", user_id: 3, show_id: 1)
-Audition.create(full_name: "Justin Ramon", desired_role: "Any", audition_time: "15:00", user_id: 4, show_id: 1)
-Audition.create(full_name: "Alex Wenner", desired_role: "Lead", audition_time: "10:05", user_id: 5, show_id: 1)
-Audition.create(full_name: "James Kyan", desired_role: "Doctor", audition_time: "12:30", user_id: 6, show_id: 1)
-Audition.create(full_name: "Ian Murphy", desired_role: "Lead", audition_time: "11:15", user_id: 7, show_id: 1)
-Audition.create(full_name: "Lori Henderson", desired_role: "Any", audition_time: "13:20", user_id: 8, show_id: 1)
-Audition.create(full_name: "Victor Zarour", desired_role: "Any", audition_time: "15:00", user_id: 9, show_id: 1)
-Audition.create(full_name: "Joon Jung", desired_role: "Dude", audition_time: "14:50", user_id: 10, show_id: 1)
+# Audition.create(full_name: "Paul Ling", desired_role: "Lead", audition_time: "11:00", user_id: 3, show_id: 1)
+# Audition.create(full_name: "Justin Ramon", desired_role: "Any", audition_time: "15:00", user_id: 4, show_id: 1)
+# Audition.create(full_name: "Alex Wenner", desired_role: "Lead", audition_time: "10:05", user_id: 5, show_id: 1)
+# Audition.create(full_name: "James Kyan", desired_role: "Doctor", audition_time: "12:30", user_id: 6, show_id: 1)
+# Audition.create(full_name: "Ian Murphy", desired_role: "Lead", audition_time: "11:15", user_id: 7, show_id: 1)
+# Audition.create(full_name: "Lori Henderson", desired_role: "Any", audition_time: "13:20", user_id: 8, show_id: 1)
+# Audition.create(full_name: "Victor Zarour", desired_role: "Any", audition_time: "15:00", user_id: 9, show_id: 1)
+# Audition.create(full_name: "Joon Jung", desired_role: "Dude", audition_time: "14:50", user_id: 10, show_id: 1)
 
 puts "Seeding done"

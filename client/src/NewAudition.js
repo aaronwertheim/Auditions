@@ -10,7 +10,6 @@ function NewAudition({currentShow}) {
     const [desiredRole, setDesiredRole] = useState("")
     const [headshot, setHeadshot] = useState("")
     const [errors, setErrors] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
     const [show, setShow] = useState(currentShow); 
     const {id} = useParams() 
@@ -20,31 +19,6 @@ function NewAudition({currentShow}) {
         .then(array =>setShow(array))
     },[])
 
-    // function handleSubmit(e) {
-    //     e.preventDefault();
-    //     setIsLoading(true);
-    //     fetch("/auditions", {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({
-    //         show_id: show.id,
-    //         full_name: fullName,
-    //         desired_role: desiredRole,
-    //         audition_time: auditionTime,
-    //       }),
-        // }).then((r) => {
-        //   setIsLoading(false);
-        //   if (r.ok) {
-        //     history.push("/auditions-list");
-        //   } else {
-        //     r.json().then((err) => setErrors(err.errors));
-        //   }
-        // });
-    //   }
-
-    
         const handleSubmit = (e) => {
            e.preventDefault()
            if (!headshot) return alert('Please add headshot') 

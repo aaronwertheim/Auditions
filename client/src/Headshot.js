@@ -10,7 +10,6 @@ function Headshot() {
         .then(audition => setHeadshot(audition.file_url))
     },[])
 
-
     return (
         <img src={headshot}></img>
     )

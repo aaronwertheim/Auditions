@@ -11,13 +11,11 @@ function NewShow({user}) {
     const [endTime, setEndTime] = useState()
     const [timeslot, setTimeslot] = useState()
     const [errors, setErrors] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
 
 
     function handleSubmit(e) {
         e.preventDefault();
-        setIsLoading(true);
         fetch("/shows", {
           method: "POST",
           headers: {
@@ -35,7 +33,6 @@ function NewShow({user}) {
             timeslot: timeslot,
           }),
         }).then((r) => {
-          setIsLoading(false);
           if (r.ok) {
             history.push("/");
           } else {

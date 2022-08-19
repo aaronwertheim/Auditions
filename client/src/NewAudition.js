@@ -9,6 +9,7 @@ function NewAudition({currentShow}) {
     const [auditionTime, setAuditionTime] = useState()
     const [desiredRole, setDesiredRole] = useState("")
     const [headshot, setHeadshot] = useState("")
+    const [resume, setResume] = useState("")
     const [errors, setErrors] = useState([]);
     const history = useHistory();
     const [show, setShow] = useState(currentShow); 
@@ -28,6 +29,7 @@ function NewAudition({currentShow}) {
            formData.append('audition[audition_time]', e.target.auditiontime.value)
            formData.append('audition[desired_role]', e.target.desiredrole.value)
            formData.append('audition[headshot]', e.target.fileInput.files[0])
+           formData.append('audition[resume]', e.target.pdfInput.files[0])
            fetch('/auditions', {
               method: "POST",
               body: formData
@@ -92,7 +94,15 @@ function NewAudition({currentShow}) {
                                                 </input>
                                             </div>
                                             <div class="mb-4">
-                                                
+                                                <input  type="text"
+                                                        placeholder="Upload Resume"
+                                                        name="pdfInput"
+                                                        accept="application/pdf"
+                                                        value={resume} 
+                                                        onChange={(e) => setResume(e.target.value)} 
+                                                        onFocus={(e) => e.target.type = "file"}
+                                                        class="cursor-pointer form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                </input>
                                             </div>
                                             <div class="text-center pt-1 mb-4 pb-1">
                                                 <button class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3">Submit</button>

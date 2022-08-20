@@ -1,64 +1,51 @@
 import { Link } from "react-router-dom";
+import {  Slide } from "pure-react-carousel";
+
 
 function ShowCard({show, user, setCurrentShow}) {
-    return (
-            <div class="flex flex-col md:flex-row overflow-hidden bg-white rounded-lg shadow-xl w-100 my-2.5 mx-2 py-1.5 px-1.5">
-                <div  class="h-64 w-auto md:w-1/2 ">
-                    {show.poster_url ? 
-                        <img    
-                            src={show.poster_url}
-                            class=" h-full w-1/2 object-cover object-center m-auto border rounded shadow-xl"
-                            alt="">
-                        </img> :
-                        <img    
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqPyn7GGPgHZw_rjM52BSBt4vhgq_pzQaig&usqp=CAU"
-                            class=" h-full w-1/2 object-cover object-center m-auto border rounded shadow-xl"
-                            alt="">
-                        </img>
-                    }
-                       
-                </div>
-                <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
-                    <h2 class="font-semibold text-lg leading-tight truncate">{show.title}</h2>
-                    <span class="text-sm text-gray-700 uppercase tracking-wide font-semibold">{show.company}</span>
-                    <p class="mt-2 h-40 px-3 py-1.5 overflow-scroll border shadow-md rounded">{show.description}</p>
-                    <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold ml-4 mt-1">{show.audition_date}
-                        <input 
-                            class="bg-transparent ml-10" 
-                            disabled={true} 
-                            value={show.start_time} 
-                            type="time">
-                        </input> - {}
-                        <input 
-                            class="bg-transparent" 
-                            disabled={true} 
-                            value={show.end_time} 
-                            type="time">
-                        </input>
-                    </p>
-                    
-                </div>
-                
-                {user.role === "Performer" ? 
-                    <Link   to={`/new-audition/${show.id}`} 
-                            onClick={() => setCurrentShow(show)}
-                            className="px-2 py-1  h-fit rounded hover:bg-gray-700 hover:text-white text-gray-700 border shadow-md" >
-                            Audition
-                    </Link> : 
-                    <>
-                    <Link   to={`/shows/${show.id}/auditions`}
-                            onClick={() => setCurrentShow(show)}
-                            className="px-2 py-1 mr-0.5 h-fit rounded hover:bg-gray-700 hover:text-white text-gray-700 border shadow-md " >
-                            Submissions
-                    </Link>
-                    <Link   to={`/shows/${show.id}`}
-                            onClick={() => setCurrentShow(show)}
-                            className="px-2 py-1  h-fit rounded hover:bg-gray-700 text-gray-700 border shadow-md" >  
-                            ✏️
-                    </Link>
-                    </>}
-                    
-            </div>  
+        return (
+                <Slide >
+                    <div className="flex flex-shrink-0 relative w-full sm:w-auto ">
+                        <img src={show.poster_url} alt="Poster" className="object-cover object-center w-full pt-16 pb-28" />
+                        <div className="bg-gray-800 bg-opacity-30 absolute rounded w-full h-full p-2">
+                            <h2 className="text-2xl font-semibold leading-4 lg:leading-5 text-white">{show.title}</h2>
+                            <div className="flex h-full items-end pb-6 ">
+                                <div className="text-xl font-semibold leading-5 lg:leading-6 text-white ">
+                                    <h3>{show.audition_date}</h3>
+                                    <input 
+                                        className="bg-transparent mt-2" 
+                                        type="time" 
+                                        value={show.start_time} 
+                                        disabled={true}>
+                                    </input>{"-"}
+                                    <input 
+                                        className="bg-transparent mb-2" 
+                                        type="time" value={show.end_time} 
+                                        disabled={true}>
+                                    </input> 
+                                    {user.role === "Performer" ? 
+                                        <Link   to={`/new-audition/${show.id}`} 
+                                                onClick={() => setCurrentShow(show)}
+                                                className=" px-1 h-fit rounded hover:bg-gray-700 hover:text-white text-gray-700 bg-white border shadow-md" >
+                                                Audition / Details
+                                        </Link> : 
+                                    <>
+                                        <Link   to={`/shows/${show.id}/auditions`}
+                                                onClick={() => setCurrentShow(show)}
+                                                className="px-1 mr-14 h-fit rounded hover:bg-gray-700 hover:text-white text-gray-700 bg-white  border shadow-md " >
+                                                Submissions
+                                        </Link>
+                                        <Link   to={`/shows/${show.id}`}
+                                                onClick={() => setCurrentShow(show)}
+                                                className="px-1 h-fit rounded hover:bg-gray-700 hover:text-white text-gray-700 bg-white border shadow-md" >  
+                                                ✏️
+                                        </Link>
+                                    </>}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Slide>
     )
 }
 

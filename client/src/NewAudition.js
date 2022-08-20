@@ -127,6 +127,7 @@ function NewAudition({currentShow}) {
                                                 class="bg-transparent">
                                             </input>
                                         </h4> 
+                                        <p class="text-sm mt-10">{show.description}</p>
                                     </div>
                                 </div>
                             </div>

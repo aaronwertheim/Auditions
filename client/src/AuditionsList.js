@@ -13,7 +13,7 @@ function AuditionsList({user}) {
       },[])
       
 
-    if (auditions.length === 0) return (<div class="text-center font-serif  uppercase text-4xl xl:text-5xl  mt-20">You currently have no upcoming auditions</div>)
+    if (auditions.length === 0) return (<div class="text-center font-semibold uppercase text-4xl mt-20">You currently have no upcoming auditions</div>)
     return (
         
             

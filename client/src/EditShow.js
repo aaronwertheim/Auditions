@@ -10,7 +10,7 @@ function EditShow({currentShow}) {
         fetch(`/shows/${id}`)
         .then(r => r.json())
         .then(array =>setShow(array))
-    },[])
+    },[id])
 
     const [newTitle, setNewTitle] = useState(show.title)
     const [newDate, setNewDate] = useState(show.audition_date)
@@ -34,13 +34,25 @@ function EditShow({currentShow}) {
             description: newDescription,
             audition_date: newDate,
         })
-        }).then(history.push('/'))
+        }).then((r) => {
+            if (r.ok) {
+              history.push("/");
+            } else {
+              r.json().then((err) => setErrors(err.errors));
+            }
+        });
     }
 
         function handleDelete(id) {
             fetch(`/shows/${id}`, {
               method: "DELETE",
-            }).then(history.push('/'))
+            }).then((r) => {
+                if (r.ok) {
+                  history.push("/");
+                } else {
+                  r.json().then((err) => setErrors(err.errors));
+                }
+            });
         }
 
     

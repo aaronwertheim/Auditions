@@ -16,7 +16,7 @@ function NewAudition({currentShow}) {
         fetch(`/shows/${id}`)
         .then(r => r.json())
         .then(array =>setShow(array))
-    },[])
+    },[id])
 
         const handleSubmit = (e) => {
            e.preventDefault()

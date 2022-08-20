@@ -24,7 +24,7 @@ function AuditionCard({audition}) {
         <div class="m-4 border-2 p-1 rounded shadow-lg w-full bg-white">
             <div class="flex flex-col md:flex-row">
                 <div class="flex flex-row justify-around p-4 font-bold leading-none uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
-                    <div class="md:text-2xl text-center"><img src={audition.show.poster_url}></img></div>
+                    <div class="md:text-2xl text-center"><img src={audition.show.poster_url} alt="Poster"></img></div>
                </div>
                 <div class="p-4 font-normal bg-black text-white md:w-3/4">
                     <h1 class="text-4xl font-bold leading-none tracking-tight text-white">{audition.show.title} - {audition.desired_role}</h1>

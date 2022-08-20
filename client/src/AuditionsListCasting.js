@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function AuditionsListCasting({currentShow}) {
     
@@ -11,13 +11,13 @@ function AuditionsListCasting({currentShow}) {
         fetch(`/shows/${id}/auditions`)
         .then(r => r.json())
         .then(array =>setAuditions(array))
-    },[])
+    },[id])
 
     useEffect(() => {
         fetch(`/shows/${id}`)
         .then(r => r.json())
         .then(array => setShow(array))
-    },[])
+    },[id])
        
     return (
         <div class="container mx-auto py-10 flex justify-center">

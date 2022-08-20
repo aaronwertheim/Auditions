@@ -119,7 +119,7 @@ function EditShow({currentShow}) {
                                     </div>
                                     <div class="lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none bg-black">
                                         <div class="text-white px-4 py-6 md:p-12 md:mx-6">
-                                            <h4 class="text-xl font-semibold mb-6">Edit Casting Info for {show.title}</h4>
+                                            <h4 class="text-xl font-semibold mb-6 underline">Edit Casting Info for {show.title}</h4>
                                             <p class="text-sm italic">I have heard That guilty creatures sitting at a play, Have, by the very cunning of the scene, Been struck so to the soul that presently They have proclaim'd their malefactions; For murder, though it have no tongue, will speak. With most miraculous organ. The play's the thing Wherein I'll catch the conscience of the king.</p>
                                         </div>
                                     </div>    

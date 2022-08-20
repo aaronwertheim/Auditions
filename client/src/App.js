@@ -9,6 +9,7 @@ import AuditionsList from "./AuditionsList";
 import NewAudition from "./NewAudition";
 import AuditionsListCasting from "./AuditionsListCasting";
 import EditShow from "./EditShow";
+import EditAudition from "./EditAudition";
 
 
 function App() {
@@ -49,6 +50,9 @@ function App() {
           </Route>
           <Route exact path={"/shows/:id"}>
             <EditShow currentShow={currentShow} />
+          </Route>
+          <Route exact path={"/auditions/:id"}>
+            <EditAudition / >
           </Route>
         </Switch>
     </BrowserRouter>

@@ -3,7 +3,7 @@ class AuditionsController < ApplicationController
     before_action :find_audition, only: [:show, :update, :destroy]
 
     def index
-        render json: @current_user.auditions
+        render json: @current_user.auditions.includes(:show).order("shows.audition_date")
     end
 
     def show

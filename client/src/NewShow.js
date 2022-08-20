@@ -128,7 +128,7 @@ function NewShow({user}) {
                                 </div>
                                 <div class="lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none bg-black">
                                     <div class="text-white px-4 py-6 md:p-12 md:mx-6">
-                                        <h4 class="text-xl font-semibold mb-6">Submit Your Casting</h4>
+                                        <h4 class="text-xl font-semibold mb-6 underline">Submit Your Casting</h4>
                                         <p class="text-sm italic">Life's but a walking shadow, A poor player that struts and frets his hour upon the stage, and then is heard no more: it is a tale told by an idiot, full of sound and fury, signifying nothing.</p>
                                     </div>
                                 </div>

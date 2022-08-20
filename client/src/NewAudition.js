@@ -111,8 +111,9 @@ function NewAudition({currentShow}) {
                                 </div>
                                 <div class="bg-black lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none">
                                     <div class="text-white px-4 py-6 md:p-12 md:mx-6">
-                                        <h4 class="text-xl font-semibold">{show.title}</h4>
-                                        <h4 class="font-semibold mb-6">{show.audition_date}
+                                    <h4 class="text-xl font-semibold mb-2 underline">Submit Audition for:</h4>
+                                        <h4 class="text-lg font-semibold">{show.title}</h4>
+                                        <h4 class="font-semibold">{show.audition_date}
                                             <input 
                                                 type="time" 
                                                 value={show.start_time} 
@@ -126,7 +127,6 @@ function NewAudition({currentShow}) {
                                                 class="bg-transparent">
                                             </input>
                                         </h4> 
-                                        <p class="text-sm italic">Suit the action to the word, the word to the action; with this special observance, that you o'erstep not the modesty of nature: for anything so overdone is from the purpose of playing, whose end, both at the first and now, was and is, to hold, as 'twere, the mirror up to nature; to show Virtue her own feature, scorn her own image, and the very age and body of the time his form and pressure.</p>
                                     </div>
                                 </div>
                             </div>

@@ -42,18 +42,18 @@ function ShowCard({show, user, setCurrentShow}) {
                 {user.role === "Performer" ? 
                     <Link   to={`/new-audition/${show.id}`} 
                             onClick={() => setCurrentShow(show)}
-                            className="px-2 py-1  h-fit rounded hover:bg-gray-300 hover:text-white text-gray-700 border shadow-md" >
+                            className="px-2 py-1  h-fit rounded hover:bg-gray-700 hover:text-white text-gray-700 border shadow-md" >
                             Audition
                     </Link> : 
                     <>
                     <Link   to={`/shows/${show.id}/auditions`}
                             onClick={() => setCurrentShow(show)}
-                            className="px-2 py-1 mr-0.5 h-fit rounded hover:bg-gray-300 hover:text-white text-gray-700 border shadow-md " >
+                            className="px-2 py-1 mr-0.5 h-fit rounded hover:bg-gray-700 hover:text-white text-gray-700 border shadow-md " >
                             Submissions
                     </Link>
                     <Link   to={`/shows/${show.id}`}
                             onClick={() => setCurrentShow(show)}
-                            className="px-2 py-1  h-fit rounded hover:bg-gray-300 text-gray-700 border shadow-md" >  
+                            className="px-2 py-1  h-fit rounded hover:bg-gray-700 text-gray-700 border shadow-md" >  
                             ✏️
                     </Link>
                     </>}

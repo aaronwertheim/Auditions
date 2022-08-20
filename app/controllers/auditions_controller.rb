@@ -1,10 +1,13 @@
 class AuditionsController < ApplicationController
+
+    before_action :find_audition, only: [:show, :update, :destroy]
+
     def index
         render json: @current_user.auditions
     end
 
     def show
-        render json: Audition.find(params[:id])
+        render json: @audition
     end
 
     def create
@@ -12,18 +15,20 @@ class AuditionsController < ApplicationController
     end
 
     def update
-        audition = Audition.find(params[:id])
-        audition.update!(audition_params)
-        render json: audition, status: :accepted
+        @audition.update!(audition_params)
+        render json: @audition, status: :accepted
     end
 
     def destroy
-        audition = Audition.find(params[:id])
-        audition.destroy
+        @audition.destroy
         head :no_content  
     end
 
     private
+
+    def find_audition
+        @audition = Audition.find(params[:id])
+    end
 
     def audition_params
         params.require(:audition).permit(:show_id, :user_id, :desired_role, :audition_time, :headshot, :resume)

@@ -56,7 +56,7 @@ function NewAudition({currentShow}) {
                                                 <input  value={auditionTime} 
                                                         type="text"
                                                         name="auditiontime"
-                                                        placeholder={"Time (" + show.timeslot + " minute increments)"} 
+                                                        placeholder={"Time - " + show.timeslot + " Minute Increments"} 
                                                         onFocus={(e) => e.target.type = "time"}
                                                         onChange={(e) => setAuditionTime(e.target.value)} 
                                                         min={show.start_time} 
@@ -99,7 +99,7 @@ function NewAudition({currentShow}) {
                                                 <button class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3">Submit</button>
                                             </div>
                                             <div class="text-center pt-1 mb-12 pb-1">
-                                                <Link to="/" class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3">Cancel</Link>
+                                                <Link to="/" class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3">Cancel</Link>
                                             </div>
                                         </form>
                                         <div>
@@ -111,7 +111,21 @@ function NewAudition({currentShow}) {
                                 </div>
                                 <div class="bg-black lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none">
                                     <div class="text-white px-4 py-6 md:p-12 md:mx-6">
-                                        <h4 class="text-xl font-semibold mb-6">Audition Form</h4>
+                                        <h4 class="text-xl font-semibold">{show.title}</h4>
+                                        <h4 class="font-semibold mb-6">{show.audition_date}
+                                            <input 
+                                                type="time" 
+                                                value={show.start_time} 
+                                                disabled={true} 
+                                                class="bg-transparent ml-1.5">
+                                            </input>-
+                                            <input 
+                                                type="time" 
+                                                value={show.end_time} 
+                                                disabled={true} 
+                                                class="bg-transparent">
+                                            </input>
+                                        </h4> 
                                         <p class="text-sm italic">Suit the action to the word, the word to the action; with this special observance, that you o'erstep not the modesty of nature: for anything so overdone is from the purpose of playing, whose end, both at the first and now, was and is, to hold, as 'twere, the mirror up to nature; to show Virtue her own feature, scorn her own image, and the very age and body of the time his form and pressure.</p>
                                     </div>
                                 </div>

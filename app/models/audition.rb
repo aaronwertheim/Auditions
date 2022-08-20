@@ -9,7 +9,7 @@ class Audition < ApplicationRecord
    
 
     def file_url
-        Rails.application.routes.url_helpers.rails_blob_path(headshot, only_path: true)
+        Rails.application.routes.url_helpers.rails_blob_path(headshot, disposition: "attachment", only_path: true)
     end
 
     def resume_url

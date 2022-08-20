@@ -11,14 +11,17 @@ function DirectorPage({user, setCurrentShow}) {
         .then(showsArray => setShows(showsArray))
       },[]);
 
-   if (showsToDisplay.length === 0)  return (<div class="text-center font-serif  uppercase text-4xl xl:text-5xl  mt-20">You do not currently have any casting calls</div>)  
+   if (showsToDisplay.length === 0)  return (
+        <div class="text-center text-gray-800 uppercase text-4xl font-semibold mt-4">
+            You do not currently have any casting calls
+        </div>
+    )  
     
     return (
         <div class="flex">
-            <div class="bg-white border-2 border-r-gray-600 text-center w-36 overflow-x-hidden min-h-screen "></div>
-            <div class="pt-6 pb-12 bg-gray-200">
-                <h1 class="text-center font-serif  uppercase text-4xl xl:text-5xl">Your Casting Calls</h1>
-                <div class="container w-100 lg:w-4/5 mx-auto flex flex-col">
+            <div class="pt-6 pb-12 bg-gray-200 mx-auto">
+                <h1 class="text-center text-gray-800 uppercase text-4xl font-semibold mt-4">Your Casting Calls</h1>
+                <div class="container w-100 lg:w-4/5 mx-auto flex flex-col mt-8">
                     {showsToDisplay.map(show => (
                         <ShowCard key={show.id} show={show} user={user} setCurrentShow={setCurrentShow} /> 
                     ))}

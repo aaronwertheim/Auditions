@@ -11,7 +11,7 @@ function Headshot() {
     },[])
 
     return (
-        <img src={headshot}></img>
+        <img class="h-screen mx-auto" src={headshot}></img>
     )
 }
 

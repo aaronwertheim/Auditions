@@ -20,8 +20,8 @@ function DirectorPage({user, setCurrentShow}) {
     )  
     return (
         <div className="container mx-auto">
-            <div className="flex items-center justify-center w-full h-full py-24  px-4">
-                <CarouselProvider className="" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={showsToDisplay.length} visibleSlides={1} step={1} infinite={true}>
+            <div className="flex items-center justify-center w-full h-full my-24  px-4">
+                <CarouselProvider className="" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={showsToDisplay.length - 2} visibleSlides={1} step={1} infinite={true}>
                     <div className="w-full relative flex items-center justify-center">
                         <ButtonBack role="button" aria-label="slide backward" className="absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
                             <svg width={8} height={14} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +31,7 @@ function DirectorPage({user, setCurrentShow}) {
                         <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
                             <Slider>
                                 <div id="slider" className="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
-                                  {shows.map(show => (  
+                                  {showsToDisplay.map(show => (  
                                     <ShowCard key={show.id} show={show} user={user} setCurrentShow={setCurrentShow}/> 
                                     ))}   
                                 </div>

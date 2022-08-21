@@ -7,10 +7,10 @@ function ShowCard({show, user, setCurrentShow}) {
                 <Slide >
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto ">
                         <img src={show.poster_url} alt="Poster" className="object-cover object-center w-full pt-16 pb-28" />
-                        <div className="bg-gray-800 bg-opacity-30 absolute rounded w-full h-full p-2">
-                            <h2 className="text-2xl font-semibold leading-4 lg:leading-5 text-white">{show.title}</h2>
+                        <div className="bg-gray-800 bg-opacity-30 absolute rounded w-full h-full px-2 pt-4 ">
+                            <h2 className="text-lg font-semibold leading-4 lg:leading-5 text-white absolute">{show.title}</h2>
                             <div className="flex h-full items-end pb-6 ">
-                                <div className="text-xl font-semibold leading-5 lg:leading-6 text-white ">
+                                <div className="font-semibold leading-5 lg:leading-6 text-white  ">
                                     <h3>{show.audition_date}</h3>
                                     <input 
                                         className="bg-transparent mt-2" 
@@ -32,7 +32,7 @@ function ShowCard({show, user, setCurrentShow}) {
                                     <>
                                         <Link   to={`/shows/${show.id}/auditions`}
                                                 onClick={() => setCurrentShow(show)}
-                                                className="px-1 mr-14 h-fit rounded hover:bg-gray-700 hover:text-white text-gray-700 bg-white  border shadow-md " >
+                                                className="px-1 mr-2 h-fit rounded hover:bg-gray-700 hover:text-white text-gray-700 bg-white  border shadow-md " >
                                                 Submissions
                                         </Link>
                                         <Link   to={`/shows/${show.id}`}

@@ -68,9 +68,9 @@ function EditShow({currentShow}) {
                                             <form to="/" onSubmit={() => handleUpdate(id)}>
                                                 <div class="mb-4">
                                                     <input  
-                                                            defaultValue={show.title} 
-                                                            onChange={(e) => setNewTitle(e.target.value)} 
-                                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                        defaultValue={show.title} 
+                                                        onChange={(e) => setNewTitle(e.target.value)} 
+                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                     </input>
                                                 </div>
                                                 <div class="mb-4">
@@ -82,23 +82,23 @@ function EditShow({currentShow}) {
                                                 </div>
                                                 <div class="mb-4">
                                                     <input   
-                                                            defaultValue={show.poster_url} 
-                                                            onChange={(e) => setNewPosterUrl(e.target.value)} 
-                                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                        defaultValue={show.poster_url} 
+                                                        onChange={(e) => setNewPosterUrl(e.target.value)} 
+                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                     </input>
                                                 </div>
                                                 <div class="mb-4">
                                                     <input  
-                                                            defaultValue={show.company} 
-                                                            onChange={(e) => setNewCompany(e.target.value)} 
-                                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                        defaultValue={show.company} 
+                                                        onChange={(e) => setNewCompany(e.target.value)} 
+                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                     </input>
                                                 </div>
                                                 <div class="mb-4">
                                                     <textarea    
-                                                                defaultValue={show.description} 
-                                                                onChange={(e) => setNewDescription(e.target.value)} 
-                                                                class="form-control block w-full h-40 resize-none px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                        defaultValue={show.description} 
+                                                        onChange={(e) => setNewDescription(e.target.value)} 
+                                                        class="form-control block w-full h-40 resize-none px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                     </textarea>
                                                 </div>
                                                 <div class="text-center pt-1 mb-12 pb-1">

@@ -69,7 +69,7 @@ function EditAudition() {
                                                     min={audition?.show?.start_time} 
                                                     max={audition?.show?.end_time}  
                                                     step={audition?.show?.timeslot * 60} 
-                                                    class="form-control uppercase block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">                                                
+                                                    class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">                                                
                                                 </input>
                                             </div>
                                             <div class="mb-4">
@@ -77,7 +77,7 @@ function EditAudition() {
                                                     name="desiredrole"
                                                     placeholder="New Role"
                                                     onChange={(e) => setNewDesiredRole(e.target.value)}
-                                                    class="form-control uppercase block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                    class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                 </input>
                                             </div>
                                             <div class="text-center pt-1 mb-4 pb-1">

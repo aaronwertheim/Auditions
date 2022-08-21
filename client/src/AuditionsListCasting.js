@@ -30,19 +30,16 @@ function AuditionsListCasting({currentShow}) {
                             <tbody class="">
                                 {auditions?.map(audition => (
                                     <tr key={audition.id }class="relative transform scale-100 text-sm py-1 border-b-2 border-blue-100 cursor-default bg-blue-500 bg-opacity-25">
-                                        <td class="pl-5 pr-3 py-2.5 whitespace-no-wrap">
+                                        <td class="pl-5 pr-3 py-2.5 whitespace-no-wrap text-right font-semibold">
                                             <div class="text-gray-400">{show.audition_date}</div>
                                             <input class="bg-transparent" type="time" disabled={true} value={audition.audition_time}></input>
                                         </td>
-
                                         <td class="px-2 py-2.5 whitespace-no-wrap">
                                             <div class="leading-5 text-gray-500 font-medium">{audition.user?.first_name + " " + audition.user?.last_name} - 
-                                            
                                                 <a class="text-blue-500 hover:underline text-xs" href={audition.file_url} download> headshot -</a> 
-                                            
                                                 <a class="text-blue-500 hover:underline text-xs" href={audition.resume_url} download> resume</a>
-                                            </div>
-                                            <div class="leading-5 text-gray-900">Role: {audition.desired_role}</div>
+                                                <div class="leading-5 text-gray-900">Role: {audition.desired_role}</div>
+                                            </div> 
                                         </td>
                                     </tr>
                                 ))}

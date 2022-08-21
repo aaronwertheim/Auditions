@@ -51,48 +51,51 @@ function NewAudition({currentShow}) {
                                 <div class="lg:w-6/12 px-4 md:px-0">
                                     <div class="md:p-12 md:mx-6">
                                         <form onSubmit={handleSubmit}>
-                                            
                                             <div class="mb-4">
-                                                <input  value={auditionTime} 
-                                                        type="text"
-                                                        name="auditiontime"
-                                                        placeholder={"Time - " + show.timeslot + " Minute Increments"} 
-                                                        onFocus={(e) => e.target.type = "time"}
-                                                        onChange={(e) => setAuditionTime(e.target.value)} 
-                                                        min={show.start_time} 
-                                                        max={show.end_time}  
-                                                        step={show.timeslot * 60} 
-                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">                                                
+                                                <input  
+                                                    value={auditionTime} 
+                                                    type="text"
+                                                    name="auditiontime"
+                                                    placeholder={"Time - " + show.timeslot + " Minute Increments"} 
+                                                    onFocus={(e) => e.target.type = "time"}
+                                                    onChange={(e) => setAuditionTime(e.target.value)} 
+                                                    min={show.start_time} 
+                                                    max={show.end_time}  
+                                                    step={show.timeslot * 60} 
+                                                    class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">                                                
                                                 </input>
                                             </div>
                                             <div class="mb-4">
-                                                <input  placeholder="Desired Role" 
-                                                        name="desiredrole"
-                                                        value={desiredRole} 
-                                                        onChange={(e) => setDesiredRole(e.target.value)} 
-                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                <input  
+                                                    placeholder="Desired Role" 
+                                                    name="desiredrole"
+                                                    value={desiredRole} 
+                                                    onChange={(e) => setDesiredRole(e.target.value)} 
+                                                    class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                 </input>
                                             </div>
                                             <div class="mb-4">
-                                                <input  type="text"
-                                                        placeholder="Upload Headshot"
-                                                        name="fileInput"
-                                                        accept="image/jpeg"
-                                                        value={headshot} 
-                                                        onChange={(e) => setHeadshot(e.target.value)} 
-                                                        onFocus={(e) => e.target.type = "file"}
-                                                        class="cursor-pointer form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                <input  
+                                                    type="text"
+                                                    placeholder="Upload Headshot"
+                                                    name="fileInput"
+                                                    accept="image/jpeg"
+                                                    value={headshot} 
+                                                    onChange={(e) => setHeadshot(e.target.value)} 
+                                                    onFocus={(e) => e.target.type = "file"}
+                                                    class="cursor-pointer form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                 </input>
                                             </div>
                                             <div class="mb-4">
-                                                <input  type="text"
-                                                        placeholder="Upload Resume"
-                                                        name="pdfInput"
-                                                        accept="application/pdf"
-                                                        value={resume} 
-                                                        onChange={(e) => setResume(e.target.value)} 
-                                                        onFocus={(e) => e.target.type = "file"}
-                                                        class="cursor-pointer form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                <input  
+                                                    type="text"
+                                                    placeholder="Upload Resume"
+                                                    name="pdfInput"
+                                                    accept="application/pdf"
+                                                    value={resume} 
+                                                    onChange={(e) => setResume(e.target.value)} 
+                                                    onFocus={(e) => e.target.type = "file"}
+                                                    class="cursor-pointer form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                 </input>
                                             </div>
                                             <div class="text-center pt-1 mb-4 pb-1">

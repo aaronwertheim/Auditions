@@ -14,7 +14,7 @@ function AuditionsList({user}) {
       },[])
       
 
-    if (auditions.length === 0) return (<div class="text-center font-semibold uppercase text-4xl mt-20">You currently have no upcoming auditions</div>)
+    if (auditions.length === 0) return (<div class="text-center font-semibold uppercase text-3xl mt-20">You currently have no upcoming auditions</div>)
     return (
         <div class="container mx-auto py-10 flex justify-center">
         <div class=" pl-4 uppercase  h-full flex flex-col">

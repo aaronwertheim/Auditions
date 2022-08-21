@@ -53,73 +53,82 @@ function NewShow({user}) {
                                     <div class="md:p-12 md:mx-6">
                                         <form onSubmit={handleSubmit}>
                                             <div class="mb-4">
-                                                <input  placeholder="Title" 
-                                                        value={title} 
-                                                        onChange={(e) => setTitle(e.target.value)} 
-                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                <input  
+                                                    placeholder="Title" 
+                                                    value={title} 
+                                                    onChange={(e) => setTitle(e.target.value)} 
+                                                    class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                 </input>
                                             </div>
                                             <div class="mb-4">
-                                                <input  type="text"
-                                                        placeholder="Audition date"
-                                                        onFocus={(e) => e.target.type = "date"}
-                                                        value={date} 
-                                                        onChange={(e) => setDate(e.target.value)}
-                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                <input  
+                                                    type="text"
+                                                    placeholder="Audition date"
+                                                    onFocus={(e) => e.target.type = "date"}
+                                                    value={date} 
+                                                    onChange={(e) => setDate(e.target.value)}
+                                                    class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                 </input>
                                             </div>
                                             <div class="mb-4">
-                                                <input  placeholder="Poster link" 
-                                                        value={posterUrl} 
-                                                        onChange={(e) => setPosterUrl(e.target.value)} 
-                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                <input  
+                                                    placeholder="Poster link" 
+                                                    value={posterUrl} 
+                                                    onChange={(e) => setPosterUrl(e.target.value)} 
+                                                    class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                 </input>
                                             </div>
                                             <div class="mb-4">
-                                                <input  placeholder="Company" 
-                                                        value={company} 
-                                                        onChange={(e) => setCompany(e.target.value)} 
-                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                <input  
+                                                    placeholder="Company" 
+                                                    value={company} 
+                                                    onChange={(e) => setCompany(e.target.value)} 
+                                                    class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                 </input>
                                             </div>
                                             <div class="mb-4">
-                                                <textarea   placeholder="Description" 
-                                                            value={description} 
-                                                            onChange={(e) => setDescription(e.target.value)} 
-                                                            class="form-control block w-full h-40 resize-none px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                <textarea   
+                                                    placeholder="Description" 
+                                                    value={description} 
+                                                    onChange={(e) => setDescription(e.target.value)} 
+                                                    class="form-control block w-full h-40 resize-none px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                 </textarea>
                                             </div>
                                             <div class="mb-4">
-                                                <input  type="text"
-                                                        placeholder="Audition start time"
-                                                        value={startTime}
-                                                        onChange={(e) => setStartTime(e.target.value)}
-                                                        onFocus={(e) => e.target.type = "time"}
-                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                <input  
+                                                    type="text"
+                                                    placeholder="Audition start time"
+                                                    value={startTime}
+                                                    onChange={(e) => setStartTime(e.target.value)}
+                                                    onFocus={(e) => e.target.type = "time"}
+                                                    class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                 </input>
                                             </div>
                                             <div class="mb-4">
-                                                <input  type="text"
-                                                        placeholder="Audition end time"
-                                                        value={endTime}
-                                                        onChange={(e) => setEndTime(e.target.value)}
-                                                        onFocus={(e) => e.target.type = "time"}
-                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                <input  
+                                                    type="text"
+                                                    placeholder="Audition end time"
+                                                    value={endTime}
+                                                    onChange={(e) => setEndTime(e.target.value)}
+                                                    onFocus={(e) => e.target.type = "time"}
+                                                    class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                 </input>
                                             </div>
                                             <div class="mb-4">
-                                                <input  type="text"
-                                                        placeholder="Timeslot length for each audition (minutes)"
-                                                        value={timeslot}
-                                                        onChange={(e) => setTimeslot(e.target.value)}
-                                                        onFocus={(e) => e.target.type = "number"}
-                                                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
+                                                <input  
+                                                    type="text"
+                                                    placeholder="Timeslot length for each audition (minutes)"
+                                                    value={timeslot}
+                                                    onChange={(e) => setTimeslot(e.target.value)}
+                                                    onFocus={(e) => e.target.type = "number"}
+                                                    class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                 </input>
                                             </div>
                                             <div class="text-center pt-1 mb-12 pb-1">
-                                                <button type="submit" 
-                                                        class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3">
-                                                        Submit
+                                                <button 
+                                                    type="submit" 
+                                                    class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3">
+                                                    Submit
                                                 </button>
                                             </div>
                                            
@@ -129,7 +138,7 @@ function NewShow({user}) {
                                 <div class="lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none bg-black">
                                     <div class="text-white px-4 py-6 md:p-12 md:mx-6">
                                         <h4 class="text-xl font-semibold mb-6 underline">Submit Your Casting</h4>
-                                        <p class="text-sm italic">Life's but a walking shadow, A poor player that struts and frets his hour upon the stage, and then is heard no more: it is a tale told by an idiot, full of sound and fury, signifying nothing.</p>
+                                        <p class="text-sm italic">Suit the action to the word, the word to the action, with this special observance, that you o'erstep not the modesty of nature</p>
                                     </div>
                                 </div>
                             </div>

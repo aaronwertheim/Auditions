@@ -24,21 +24,24 @@ function ShowCard({show, user, setCurrentShow}) {
                                         disabled={true}>
                                     </input> 
                                     {user.role === "Performer" ? 
-                                        <Link   to={`/new-audition/${show.id}`} 
-                                                onClick={() => setCurrentShow(show)}
-                                                className=" px-1 h-fit rounded hover:bg-gray-700 hover:text-white text-gray-700 bg-white border shadow-md" >
-                                                Audition / Details
+                                        <Link   
+                                            to={`/new-audition/${show.id}`} 
+                                            onClick={() => setCurrentShow(show)}
+                                            className=" px-1 h-fit rounded hover:bg-gray-700 hover:text-white text-gray-700 bg-white border shadow-md" >
+                                            Audition / Details
                                         </Link> : 
                                     <>
-                                        <Link   to={`/shows/${show.id}/auditions`}
-                                                onClick={() => setCurrentShow(show)}
-                                                className="px-1 mr-2 h-fit rounded hover:bg-gray-700 hover:text-white text-gray-700 bg-white  border shadow-md " >
-                                                Submissions
+                                        <Link   
+                                            to={`/shows/${show.id}/auditions`}
+                                            onClick={() => setCurrentShow(show)}
+                                            className="px-1 mr-2 h-fit rounded hover:bg-gray-700 hover:text-white text-gray-700 bg-white  border shadow-md " >
+                                            Submissions
                                         </Link>
-                                        <Link   to={`/shows/${show.id}`}
-                                                onClick={() => setCurrentShow(show)}
-                                                className="px-1 h-fit rounded hover:bg-gray-700 hover:text-white text-gray-700 bg-white border shadow-md" >  
-                                                ✏️
+                                        <Link   
+                                            to={`/shows/${show.id}`}
+                                            onClick={() => setCurrentShow(show)}
+                                            className="px-1 h-fit rounded hover:bg-gray-700 hover:text-white text-gray-700 bg-white border shadow-md" >  
+                                            ✏️
                                         </Link>
                                     </>}
                                 </div>

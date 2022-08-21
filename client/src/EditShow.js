@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { createBrowserHistory } from "history";
+import { useHistory, useParams } from "react-router-dom";
+
 
 function EditShow({currentShow}) {
 
@@ -18,10 +18,10 @@ function EditShow({currentShow}) {
     const [newCompany, setNewCompany] = useState(show.company)
     const [newDescription, setNewDescription] = useState(show.description)
     const [errors, setErrors] = useState([]);
-    const history = createBrowserHistory({ forceRefresh: true });
+    const history = useHistory();
 
-
-    function handleUpdate(id) {
+    function handleUpdate(e) {
+        e.preventDefault();
         fetch(`/shows/${id}`, {
           method: "PATCH",
           headers: {
@@ -43,7 +43,7 @@ function EditShow({currentShow}) {
         });
     }
 
-        function handleDelete(id) {
+        function handleDelete() {
             fetch(`/shows/${id}`, {
               method: "DELETE",
             }).then((r) => {
@@ -54,7 +54,6 @@ function EditShow({currentShow}) {
                 }
             });
         }
-
     
         return (
             <section class="h-full gradient-form bg-gray-200 md:h-screen">
@@ -65,7 +64,7 @@ function EditShow({currentShow}) {
                                 <div class="lg:flex lg:flex-wrap g-0">
                                     <div class="lg:w-6/12 px-4 md:px-0">
                                         <div class="md:p-12 md:mx-6">
-                                            <form to="/" onSubmit={() => handleUpdate(id)}>
+                                            <form onSubmit={handleUpdate}>
                                                 <div class="mb-4">
                                                     <input  
                                                         defaultValue={show.title} 
@@ -74,11 +73,12 @@ function EditShow({currentShow}) {
                                                     </input>
                                                 </div>
                                                 <div class="mb-4">
-                                                <input  type="date"
+                                                    <input  
+                                                        type="date"
                                                         defaultValue={show.audition_date} 
                                                         onChange={(e) => setNewDate(e.target.value)}
                                                         class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
-                                                </input>
+                                                    </input>
                                                 </div>
                                                 <div class="mb-4">
                                                     <input   
@@ -102,16 +102,18 @@ function EditShow({currentShow}) {
                                                     </textarea>
                                                 </div>
                                                 <div class="text-center pt-1 mb-12 pb-1">
-                                                    <button type="submit" 
-                                                            class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3">
-                                                            Update
+                                                    <button 
+                                                        type="submit" 
+                                                        class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3">
+                                                        Update
                                                     </button>
                                                 </div>
                                                 <div class="text-center pt-1 pb-1">
-                                                    <button type="submit" 
-                                                            class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3"
-                                                            onClick={() => handleDelete(id)}>
-                                                            Remove this casting
+                                                    <button 
+                                                        type="submit" 
+                                                        class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3"
+                                                        onClick={handleDelete}>
+                                                        Remove this casting
                                                     </button>
                                                 </div>
                                             </form>

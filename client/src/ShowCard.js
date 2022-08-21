@@ -6,8 +6,8 @@ function ShowCard({show, user, setCurrentShow}) {
         return (
                 <Slide >
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto ">
-                        <img src={show.poster_url} alt="Poster" className="object-cover object-center w-full pt-16 pb-28" />
-                        <div className="bg-gray-800 bg-opacity-30 absolute rounded w-full h-full px-2 pt-4 ">
+                        <img src={show.poster_url} alt="Poster" className="object-cover object-center w-full pt-32 pb-32" />
+                        <div className="bg-gray-800 bg-opacity-30 absolute rounded w-full h-full px-2 pt-4 shadow-lg ">
                             <h2 className="text-lg font-semibold leading-4 lg:leading-5 text-white absolute">{show.title}</h2>
                             <div className="flex h-full items-end pb-6 ">
                                 <div className="font-semibold leading-5 lg:leading-6 text-white  ">

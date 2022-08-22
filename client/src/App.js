@@ -10,6 +10,8 @@ import NewAudition from "./NewAudition";
 import AuditionsListCasting from "./AuditionsListCasting";
 import EditShow from "./EditShow";
 import EditAudition from "./EditAudition";
+import MessageForm from "./MessageForm";
+import MessagesList from "./MessagesList";
 
 
 function App() {
@@ -52,7 +54,13 @@ function App() {
             <EditShow currentShow={currentShow} />
           </Route>
           <Route exact path={"/auditions/:id"}>
-            <EditAudition / >
+            <EditAudition />
+          </Route>
+          <Route exact path={"/send-messages/:id"}>
+            <MessageForm user={user} />
+          </Route>
+          <Route exact path={"/messages-list"}>
+            <MessagesList user={user} />
           </Route>
         </Switch>
     </BrowserRouter>

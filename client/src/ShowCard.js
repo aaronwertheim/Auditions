@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import {  Slide } from "pure-react-carousel";
 
 
-function ShowCard({show, user, setCurrentShow}) {
+function ShowCard({show, user, setCurrentShow, index}) {
         return (
-                <Slide >
+                <Slide index={index} >
                     <div className="flex flex-shrink-0 relative w-full sm:w-auto ">
                         <img src={show.poster_url} alt="Poster" className="object-cover object-center w-full pt-32 pb-32" />
                         <div className="bg-gray-800 bg-opacity-30 absolute rounded w-full h-full px-2 pt-4 shadow-lg ">
@@ -28,7 +28,7 @@ function ShowCard({show, user, setCurrentShow}) {
                                             to={`/new-audition/${show.id}`} 
                                             onClick={() => setCurrentShow(show)}
                                             className=" px-1 h-fit rounded hover:bg-gray-700 hover:text-white text-gray-700 bg-white border shadow-md" >
-                                            Audition / Details
+                                            Audition
                                         </Link> : 
                                     <>
                                         <Link   

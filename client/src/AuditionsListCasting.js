@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 function AuditionsListCasting({currentShow}) {
     
@@ -33,6 +33,9 @@ function AuditionsListCasting({currentShow}) {
                                         <td class="pl-5 pr-3 py-2.5 whitespace-no-wrap text-right font-semibold">
                                             <div class="text-gray-400">{show.audition_date}</div>
                                             <input class="bg-transparent" type="time" disabled={true} value={audition.audition_time}></input>
+                                            <div class="text-blue-500 hover:underline text-xs">
+                                                <Link to={`/send-messages/${audition.user?.id}`} >message</Link>
+                                            </div>
                                         </td>
                                         <td class="px-2 py-2.5 whitespace-no-wrap">
                                             <div class="leading-5 text-gray-500 font-medium">{audition.user?.first_name + " " + audition.user?.last_name} - 

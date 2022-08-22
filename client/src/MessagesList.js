@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import MessageCard from "./MessageCard";
 
 function MessagesList({user}) {
 
-    const [messages, setMessages] = useState([])
+    const history = useHistory();
+    const [messages, setMessages] = useState([]);
+    const [errors, setErrors] = useState([]);
     useEffect(() => {
         fetch('/messages')
         .then(r => r.json())
         .then(messagesArray => setMessages(messagesArray.filter(message => message.recipient_id === user.id)))
-    },[])
+    },[user.id])
 
 
     return (

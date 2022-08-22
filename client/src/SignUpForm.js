@@ -26,6 +26,7 @@ function SignUpForm({ onLogin }) {
         role,
         first_name: firstName,
         last_name: lastName,
+        unread: 0,
       }),
     }).then((r) => {
       setIsLoading(false);

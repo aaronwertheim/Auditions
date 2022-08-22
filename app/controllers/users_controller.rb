@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize, only: [:create, :index]
+    skip_before_action :authorize, only: [:create, :index, :update_unread]
 
     def index
       render json: User.all
@@ -19,9 +19,18 @@ class UsersController < ApplicationController
       render json: @current_user, status: :created
     end
 
+    def find_user
+      render json: User.find(params[:id])
+    end
+
+    def update_unread
+      user = User.find(params[:id])
+      render json: user.update!(user_params)
+    end
+
     private
 
     def user_params
-      params.permit(:username, :first_name, :last_name, :password, :password_confirmation, :role)
+      params.permit(:username, :first_name, :last_name, :password, :password_confirmation, :role, :unread)
     end
 end

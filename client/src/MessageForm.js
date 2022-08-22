@@ -6,10 +6,16 @@ function MessageForm({user}) {
 
     const [content, setContent] = useState();
     const [recipient, setRecipient] = useState();
+    
     const {id} = useParams();
     const [errors, setErrors] = useState([]);
     const history = useHistory();
 
+    useEffect(() => {
+        fetch(`/user/${id}`)
+        .then(r => r.json())
+        .then(user => setRecipient(user))
+    },[id])
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -24,19 +30,28 @@ function MessageForm({user}) {
             content,
           }),
         }).then((r) => {
-          if (r.ok) {
-            history.goBack();
-          } else {
-            r.json().then((err) => setErrors(err.errors));
-          }
-        });
-      }
+            if(r.ok) {
+                let newUnread = recipient?.unread + 1
+                fetch(`/user/${id}/`, {
+                    method: "PATCH",
+                    headers:{
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        unread: newUnread
+                    }),
+                }).then((r) => {
+                    if (r.ok) {
+                       user.role === "Casting Director" ? history.goBack() : history.push("/auditions-list")
+                    } else {
+                        r.json().then((err) => setErrors(err.errors));
+                    }
+                    });
+                        }
+                    })
+                }
 
-    useEffect(() => {
-        fetch('/users')
-        .then(r => r.json())
-        .then(users => setRecipient(users.filter(user => user.id === parseInt(id))))
-    },[id])
+   
     
 
     return (
@@ -77,7 +92,7 @@ function MessageForm({user}) {
                             </div>
                             <div class="bg-black lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none">
                                 <div class="text-white px-4 py-6 md:p-12 md:mx-6">
-                                    <h4 class="text-xl font-semibold mb-2 underline">Send A Message To {recipient?.map(r => r.first_name + " " + r.last_name)}</h4>
+                                    <h4 class="text-xl font-semibold mb-2 underline">{"Send a Message to: " + recipient?.first_name + " " + recipient?.last_name}</h4>
                                     <p class="text-sm mt-10"></p>
                                 </div>
                             </div>

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/messages', to: 'messages#index'
   post '/messages', to: 'messages#create'
   get '/shows/:id/auditions', to: 'shows#show_with_auditions'
-
-
+  get '/user/:id', to: 'users#find_user'
+  patch '/user/:id', to: 'users#update_unread'
   
 end

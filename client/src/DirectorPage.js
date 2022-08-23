@@ -22,7 +22,7 @@ function DirectorPage({user, setCurrentShow}) {
         <div className="container mx-auto">
             <h2 className="text-center text-3xl text-gray-800 uppercase font-semibold mt-10 underline">{user.first_name + "'s casting calls"}</h2>
             <div className="flex items-center justify-center w-full h-full my-14  px-4">
-                <CarouselProvider className="" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={showsToDisplay.length === 1 ? showsToDisplay.length : showsToDisplay.length / 2} step={1} infinite={true}>
+                <CarouselProvider className="" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={showsToDisplay.length} step={1} infinite={true}>
                     <div className="w-full relative flex items-center justify-center">
                         <ButtonBack role="button" aria-label="slide backward" className="absolute z-30 left-0 ml-8 hover:bg-gray-800 hover:ring-2 hover:ring-gray-800 hover:ring-offset-2 cursor-pointer" id="prev">
                             <svg width={14} height={20} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">

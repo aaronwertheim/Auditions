@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 
 
-function MessageForm({user}) {
+function MessageForm({user, currentShow}) {
 
     const [content, setContent] = useState();
     const [recipient, setRecipient] = useState();
@@ -79,9 +79,7 @@ function MessageForm({user}) {
                                                 Send
                                             </button>
                                         </div>
-                                        <div class="text-center pt-1 pb-1">
-                                            <Link to="/auditions-list" class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3">Go Back</Link>
-                                        </div>
+                                        
                                     </form>
                                     <div>
                                         {errors.map((err) => (

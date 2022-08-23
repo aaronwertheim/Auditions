@@ -34,7 +34,7 @@ function AuditionsListCasting({currentShow}) {
                                             <div class="text-gray-400">{show.audition_date}</div>
                                             <input class="bg-transparent" type="time" disabled={true} value={audition.audition_time}></input>
                                             <div class="text-blue-500 hover:underline text-xs">
-                                                <Link to={`/send-messages/${audition.user?.id}`} >message</Link>
+                                                <Link to={`/send-messages/${audition.user?.id}/`} >message</Link>
                                             </div>
                                         </td>
                                         <td class="px-2 py-2.5 whitespace-no-wrap">

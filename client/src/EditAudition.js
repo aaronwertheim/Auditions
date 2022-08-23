@@ -80,10 +80,10 @@ function EditAudition() {
                                                     class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-700 focus:outline-none">
                                                 </input>
                                             </div>
-                                            <div class="text-center pt-1 mb-4 pb-1">
+                                            <div class="text-center py-1 mb-4 ">
                                                 <button class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3">Update</button>
                                             </div>
-                                            <div class="text-center pt-1 mb-12 pb-1">
+                                            <div class="text-center py-1 mb-4 ">
                                                 <button onClick={handleDelete} class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3">Cancel Audition</button>
                                             </div>
                                         </form>

@@ -31,7 +31,7 @@ function NavBar({ user, setUser }) {
     
 
     return (
-        <nav class="flex items-center justify-between flex-wrap bg-black text-white p-6">
+        <nav class="flex items-center justify-between flex-wrap bg-black text-white p-6 font-semibold">
             <div class="flex items-center flex-shrink-0  ">
                 <img    
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqPyn7GGPgHZw_rjM52BSBt4vhgq_pzQaig&usqp=CAU"

@@ -57,10 +57,10 @@ function App() {
             <EditAudition />
           </Route>
           <Route exact path={"/send-messages/:id"}>
-            <MessageForm user={user} />
+            <MessageForm user={user} currentShow={currentShow}/>
           </Route>
           <Route exact path={"/messages-list"}>
-            <MessagesList user={user} />
+            <MessagesList user={user}  />
           </Route>
         </Switch>
     </BrowserRouter>

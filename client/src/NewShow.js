@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 function NewShow({user}) {
     const [title, setTitle] = useState("")
     const [date, setDate] = useState()
-    const [posterUrl, setPosterUrl] = useState("")
+    const [posterUrl, setPosterUrl] = useState("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqPyn7GGPgHZw_rjM52BSBt4vhgq_pzQaig&usqp=CAU")
     const [company, setCompany] = useState("")
     const [description, setDescription] = useState("")
     const [startTime, setStartTime] = useState()

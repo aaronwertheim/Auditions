@@ -10,6 +10,12 @@ class MessagesController < ApplicationController
         render json: @current_user.messages.create!(message_params)
     end
 
+    def destroy
+        message = Message.find(params[:id])
+        message.destroy
+        head :no_content
+    end
+
     private
 
     def message_params

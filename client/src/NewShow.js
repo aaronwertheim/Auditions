@@ -12,10 +12,12 @@ function NewShow({user}) {
     const [timeslot, setTimeslot] = useState()
     const [errors, setErrors] = useState([]);
     const history = useHistory();
+    const [isLoading, setIsLoading] = useState(false)
 
 
     function handleSubmit(e) {
         e.preventDefault();
+        setIsLoading(true)
         fetch("/shows", {
           method: "POST",
           headers: {
@@ -33,6 +35,7 @@ function NewShow({user}) {
             timeslot: timeslot,
           }),
         }).then((r) => {
+            setIsLoading(false)
           if (r.ok) {
             history.push("/");
           } else {
@@ -128,7 +131,7 @@ function NewShow({user}) {
                                                 <button 
                                                     type="submit" 
                                                     class="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3">
-                                                    Submit
+                                                     {isLoading ? "Loading..." : "Submit"}
                                                 </button>
                                             </div>
                                            

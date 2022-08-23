@@ -20,9 +20,16 @@ function DirectorPage({user, setCurrentShow}) {
     )  
     return (
         <div className="container mx-auto">
-            <h2 className="text-center text-3xl text-gray-800 uppercase font-semibold mt-10 underline">{user.first_name + "'s casting calls"}</h2>
-            <div className="flex items-center justify-center w-full h-full my-14  px-4">
-                <CarouselProvider className="" naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={showsToDisplay.length} step={1} infinite={true}>
+            <div className="mt-0.5 py-6 px-6 bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAoy3Gqz3Fiht22bFo40PBdJlJ_Ai6tOYzwA&usqp=CAU')] ">
+                <div className="text-white">
+                    <h1 className="text-4xl  font-semibold">Casting Calls</h1>
+                    <p className="text-lg  mt-2">
+                        Directed by: <span className="font-bold">{user.first_name + " " + user.last_name}</span>
+                    </p>
+                </div>
+            </div>
+            <div className="flex items-center justify-center w-full h-full ">
+                <CarouselProvider naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={showsToDisplay.length} step={1} infinite={true}>
                     <div className="w-full relative flex items-center justify-center">
                         <ButtonBack role="button" aria-label="slide backward" className="absolute z-30 left-0 ml-8 hover:bg-gray-800 hover:ring-2 hover:ring-gray-800 hover:ring-offset-2 cursor-pointer" id="prev">
                             <svg width={14} height={20} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">

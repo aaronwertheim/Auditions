@@ -14,8 +14,15 @@ function PerformerPage({user, setCurrentShow}) {
 
       return (
         <div className="container mx-auto">
-            <h2 className="text-center text-3xl text-gray-800 uppercase font-semibold mt-10 underline">Open Casting Calls</h2>
-            <div className="flex items-center justify-center w-full h-full px-4 my-24">
+             <div className="mt-0.5 py-6 px-6 bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAoy3Gqz3Fiht22bFo40PBdJlJ_Ai6tOYzwA&usqp=CAU')] ">
+                <div className="text-white">
+                    <h1 className="text-4xl font-semibold"> {"Hello " + user.first_name + " " + user.last_name}</h1>
+                    <p className="text-lg  mt-2">
+                        <span className="font-bold">All Open Casting Calls:</span>
+                    </p>
+                </div>
+            </div>
+            <div className="flex items-center justify-center w-full h-full">
                 <CarouselProvider naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={shows.length} visibleSlides={4} step={1} infinite={true}>
                     <div className="w-full relative flex items-center justify-center">
                         <ButtonBack role="button" aria-label="slide backward" className="absolute z-30 left-0 ml-8 focus:outline-none hover:bg-gray-800 hover:ring-2 hover:ring-gray-800 hover:ring-offset-2  cursor-pointer" id="prev">

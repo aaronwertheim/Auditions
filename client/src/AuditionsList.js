@@ -35,7 +35,7 @@ function AuditionsList({user}) {
                                     </td>
                                     <td class="px-2 py-2.5 whitespace-no-wrap">
                                         <div class="leading-5 text-gray-500 font-medium">{audition.show.company} - {audition.show.title}
-                                            <div class="leading-5 text-gray-900">Role: {audition.desired_role}</div>
+                                            {audition.desired_role === "" ? <></> : <div class="leading-5 text-gray-900">Role: {audition.desired_role}</div>}
                                         </div>
                                     </td>
                                 </tr>

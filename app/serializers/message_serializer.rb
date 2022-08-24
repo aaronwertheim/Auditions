@@ -3,8 +3,8 @@ class MessageSerializer < ActiveModel::Serializer
 
   belongs_to :user
 
-  def created_at
-    object.created_at.strftime("%m/%d/%Y at %I:%M%p")
-  end
+  # def created_at
+  #   object.created_at.strftime("%m/%d/%Y at %I:%M%p")
+  # end
 
 end

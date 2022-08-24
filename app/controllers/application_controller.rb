@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
     before_action :authorize
     rescue_from ActiveRecord::RecordInvalid, with: :handle_invalid_data
     rescue_from ActiveRecord::RecordNotFound, with: :handle_not_found
-  
+
     private
   
     def handle_not_found(error)

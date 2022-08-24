@@ -67,7 +67,7 @@ function NewAudition({currentShow}) {
                                             </div>
                                             <div class="mb-4">
                                                 <input  
-                                                    placeholder="Desired Role" 
+                                                    placeholder="Desired Role (optional)" 
                                                     name="desiredrole"
                                                     value={desiredRole} 
                                                     onChange={(e) => setDesiredRole(e.target.value)} 

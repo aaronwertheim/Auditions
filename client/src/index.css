@@ -8,6 +8,7 @@
 
 body {
     background-color: rgb(229 231 235);
+    background-image: url('https://img.freepik.com/free-vector/seamless-white-interlaced-rounded-arc-patterned-background_53876-97975.jpg?w=2000');
 }
 
 input[type="time"]::-webkit-calendar-picker-indicator {

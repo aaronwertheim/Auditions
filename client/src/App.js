@@ -12,6 +12,7 @@ import EditShow from "./EditShow";
 import EditAudition from "./EditAudition";
 import MessageForm from "./MessageForm";
 import MessagesList from "./MessagesList";
+import Footer from "./Footer";
 
 
 function App() {
@@ -63,6 +64,7 @@ function App() {
             <MessagesList user={user}  />
           </Route>
         </Switch>
+        <Footer />
     </BrowserRouter>
   );
 }

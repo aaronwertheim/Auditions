@@ -1,13 +1,13 @@
-User.create(username:"mWertheim", first_name: "Marty", last_name: "Wertheim", password:"a", password_confirmation:"a", role:"Casting Director", unread: 0)
-User.create(username:"pLing", first_name: "Paul", last_name: "Ling", password:"a", password_confirmation:"a", role:"Casting Director", unread: 0)
-User.create(username:"aWertheim", first_name: "Aaron", last_name: "Wertheim", password: "a", password_confirmation: "a", role: "Performer", unread: 0)
-User.create(username:"kPellicone", first_name: "Kevin", last_name: "Pellicone", password: "a", password_confirmation: "a", role: "Performer", unread: 0)
-User.create(username:"bLile", first_name: "Bear", last_name: "Lile", password: "a", password_confirmation: "a", role: "Performer", unread: 0)
-User.create(username:"kKeeling", first_name: "Kevin", last_name: "Keeling", password: "a", password_confirmation: "a", role: "Performer", unread: 0)
-User.create(username:"bBowman", first_name: "Bobby", last_name: "Bowman", password: "a", password_confirmation: "a", role: "Performer", unread: 0)
-User.create(username:"iMaryfield", first_name: "Ian", last_name: "Maryfield", password: "a", password_confirmation: "a", role: "Performer", unread: 0)
-User.create(username:"bRoach", first_name: "Brennan", last_name: "Roach", password: "a", password_confirmation: "a", role: "Performer", unread: 0)
-User.create(username:"jJung", first_name: "Joon", last_name: "Jung", password: "a", password_confirmation: "a", role: "Performer", unread: 0)
+User.create(username:"mWertheim", first_name: "Marty", last_name: "Wertheim", password:"Duck-soup1", password_confirmation:"Duck-soup1", role:"Casting Director", unread: 0)
+User.create(username:"pLing", first_name: "Paul", last_name: "Ling", password:"Duck-soup1", password_confirmation:"Duck-soup1", role:"Casting Director", unread: 0)
+User.create(username:"aWertheim", first_name: "Aaron", last_name: "Wertheim", password: "Duck-soup1", password_confirmation: "Duck-soup1", role: "Performer", unread: 0)
+User.create(username:"kPellicone", first_name: "Kevin", last_name: "Pellicone", password: "Duck-soup1", password_confirmation: "Duck-soup1", role: "Performer", unread: 0)
+User.create(username:"bLile", first_name: "Bear", last_name: "Lile", password: "Duck-soup1", password_confirmation: "Duck-soup1", role: "Performer", unread: 0)
+User.create(username:"kKeeling", first_name: "Kevin", last_name: "Keeling", password: "Duck-soup1", password_confirmation: "Duck-soup1", role: "Performer", unread: 0)
+User.create(username:"bBowman", first_name: "Bobby", last_name: "Bowman", password: "Duck-soup1", password_confirmation: "Duck-soup1", role: "Performer", unread: 0)
+User.create(username:"iMaryfield", first_name: "Ian", last_name: "Maryfield", password: "Duck-soup1", password_confirmation: "Duck-soup1", role: "Performer", unread: 0)
+User.create(username:"bRoach", first_name: "Brennan", last_name: "Roach", password: "Duck-soup1", password_confirmation: "Duck-soup1", role: "Performer", unread: 0)
+User.create(username:"jJung", first_name: "Joon", last_name: "Jung", password: "Duck-soup1", password_confirmation: "Duck-soup1", role: "Performer", unread: 0)
 
 
 

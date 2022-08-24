@@ -20,7 +20,7 @@ function AuditionsListCasting({currentShow}) {
     },[id])
        
     return (
-        <div class="container mx-auto py-10 flex justify-center">
+        <div class="container mx-auto py-10 mb-20 flex justify-center">
             <div class=" pl-4 uppercase  h-full flex flex-col">
                 <div class="bg-white text-gray-500 font-bold px-5 py-3 shadow border-b border-gray-300">
                     Auditions for: {show.title}

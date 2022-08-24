@@ -14,7 +14,7 @@ function MessagesList({user}) {
     },[user.id])
 
     return (
-        <main class=" flex bg-gray-800 mx-auto w-fit mt-10 ">
+        <main class=" flex bg-gray-800 mx-auto w-fit mt-10 mb-20 ">
             <div class={messages.length === 0 ? " mx-20" : "overflow-y-auto overflow-hidden pb-9"}>
                 <div class="px-4 bg-gray-800 py-2 flex items-center justify-between ">
                     <div class="text-sm flex items-center font-bold text-white underline">

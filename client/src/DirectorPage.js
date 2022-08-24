@@ -36,7 +36,7 @@ function DirectorPage({user, setCurrentShow}) {
                                 <path d="M7 1L1 7L7 13" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </ButtonBack>
-                        <div className="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
+                        <div className="w-full h-full mb-20 mx-auto overflow-x-hidden overflow-y-hidden">
                             <Slider>
                                 <div id="slider" className="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
                                   {showsToDisplay.map((show, index) => (  

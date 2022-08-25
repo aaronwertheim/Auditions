@@ -1,7 +1,7 @@
 function Footer() {
     return (
-        <footer class="p-4 bg-black md:flex md:items-center md:justify-between md:p-6 mt-16 fixed w-screen bottom-0">
-            <span class="text-sm text-white sm:text-center">2022 Aaron Wertheim</span>
+        <footer class="p-4 bg-black md:flex md:items-center md:justify-between md:p-2 mt-16 fixed w-screen bottom-0 font-semibold">
+            <span class="text-sm text-white sm:text-center">Created by Aaron Wertheim</span>
             <ul class="flex flex-wrap items-center mt-3 text-sm text-white sm:mt-0">
                 <li>
                     <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>

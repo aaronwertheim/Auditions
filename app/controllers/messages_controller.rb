@@ -1,7 +1,5 @@
 class MessagesController < ApplicationController
 
-    # skip_before_action :authorize, only: :index
-
     def index
         render json: Message.all
     end

@@ -31,7 +31,7 @@ function DirectorPage({user, setCurrentShow}) {
             <div className="flex items-center justify-center w-full h-full ">
                 <CarouselProvider naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={showsToDisplay.length} step={1} infinite={true}>
                     <div className="w-full relative flex items-center justify-center">
-                        <ButtonBack role="button" aria-label="slide backward" className="absolute z-30 left-0 ml-8 hover:bg-gray-800 hover:ring-2 hover:ring-gray-800 hover:ring-offset-2 cursor-pointer" id="prev">
+                        <ButtonBack role="button" aria-label="slide backward" className="absolute z-30 left-0 ml-8  bg-gray-800 ring-2 ring-gray-800 ring-offset-2 hover:animate-ping cursor-pointer" id="prev">
                             <svg width={14} height={20} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 1L1 7L7 13" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
@@ -45,7 +45,7 @@ function DirectorPage({user, setCurrentShow}) {
                                 </div>
                             </Slider>
                         </div>
-                        <ButtonNext role="button" aria-label="slide forward" className="absolute z-30 right-0 mr-8 hover:bg-gray-800 hover:ring-2 hover:ring-gray-800 hover:ring-offset-2 cursor-pointer" id="next">
+                        <ButtonNext role="button" aria-label="slide forward" className="absolute z-30 right-0 mr-8  bg-gray-800 ring-2 ring-gray-800 ring-offset-2 hover:animate-ping cursor-pointer" id="next">
                             <svg width={14} height={20} viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 1L7 7L1 13" stroke="white" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                             </svg>

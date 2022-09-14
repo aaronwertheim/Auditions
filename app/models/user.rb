@@ -5,32 +5,21 @@ class User < ApplicationRecord
 
     validates :username, presence: true, uniqueness: true
     validates :role, :first_name, :last_name, presence: true
-    
-    # validate :password_lower_case
-    # validate :password_uppercase
-    # validate :password_special_char
-    # validate :password_contains_number
-  
-    # def password_uppercase
-    #   return if !!password.match(/\p{Upper}/)
-    #   errors.add :password, ' must contain at least 1 uppercase '
-    # end
-  
-    # def password_lower_case
-    #   return if !!password.match(/\p{Lower}/)
-    #   errors.add :password, ' must contain at least 1 lowercase '
-    # end
-  
-    # def password_special_char
-    #   special = "?<>',?[]}{=-)(*&^%$#`~{}!"
-    #   regex = /[#{special.gsub(/./){|char| "\\#{char}"}}]/
-    #   return if password =~ regex
-    #   errors.add :password, ' must contain special character'
-    # end
-  
-    # def password_contains_number
-    #   return if password.count("0-9") > 0
-    #   errors.add :password, ' must contain at least one number'
-    # end
+    validates :password, length: { minimum: 8 }, on: :create
+    validate :password_requirements_are_met, on: :create
+
     has_secure_password
+
+    def password_requirements_are_met
+        rules = {
+          " must contain at least one lowercase letter"  => /[a-z]+/,
+          " must contain at least one uppercase letter"  => /[A-Z]+/,
+          " must contain at least one digit"             => /\d+/,
+          " must contain at least one special character" => /[^A-Za-z0-9]+/
+        }
+      
+        rules.each do |message, regex|
+          errors.add( :password, message ) unless password.match( regex )
+        end
+      end
 end

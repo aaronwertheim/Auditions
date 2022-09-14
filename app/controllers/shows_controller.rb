@@ -3,7 +3,7 @@ class ShowsController < ApplicationController
     before_action :find_show, only: [:show, :update, :show_with_auditions, :destroy]
     
     def index
-        render json: Show.order(:audition_date)
+        render json: Show.where('audition_date > ?', Date.today).order(:audition_date)
     end
 
     def show

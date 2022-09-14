@@ -51,4 +51,4 @@ gem 'active_model_serializers',
     git: 'https://github.com/jpawlyn/active_model_serializers.git',
     branch: '0-10-stable'
 
-gem 'whenever', require: false
+# gem 'whenever', require: false

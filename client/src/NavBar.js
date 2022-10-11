@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 function NavBar({ user, setUser }) {
@@ -13,21 +13,21 @@ function NavBar({ user, setUser }) {
       });
     }
 
-    function handleClick() {
-        fetch(`/user/${user.id}/`, {
-            method: "PATCH",
-            headers:{
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                unread: 0
-            }),
-        }).then((r) => {
-          if(r.ok) {
-              history.go(0)
-                      }
-                  })
-    }
+    // function handleClick() {
+    //     fetch(`/user/${user.id}/`, {
+    //         method: "PATCH",
+    //         headers:{
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({
+    //             unread: 0
+    //         }),
+    //     }).then((r) => {
+    //       if(r.ok) {
+    //           history.go(0)
+    //                   }
+    //               })
+    // }
     
 
     return (
@@ -51,7 +51,7 @@ function NavBar({ user, setUser }) {
                             <Link to="/auditions-list" class="block mt-4 lg:inline-block lg:mt-0 hover:text-teal-500  mr-6">View My Auditions</Link>
                         </>
                     }   
-                    <Link to="/messages-list" onClick={handleClick} class="block mt-4 lg:inline-block lg:mt-0 hover:text-teal-500  mr-6">{"Messages (" + user.unread + " unread)"}</Link>
+                    <Link to="/messages-list"  class="block mt-4 lg:inline-block lg:mt-0 hover:text-teal-500  mr-6">{"Messages (" + user.unread + " unread)"}</Link>
                     <Link   to="/" 
                             onClick={handleLogoutClick}
                             class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">

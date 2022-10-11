@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import MessageCard from "./MessageCard";
 
-function MessagesList({user}) {
+function MessagesList({user, updateUnread}) {
 
    
     const [messages, setMessages] = useState([]);
@@ -11,7 +11,23 @@ function MessagesList({user}) {
         fetch('/messages')
         .then(r => r.json())
         .then(messagesArray => setMessages(messagesArray.filter(message => message.recipient_id === user.id)))
+        .then(() => updateUnread())
     },[user.id])
+
+//     fetch(`/user/${user.id}/`, {
+//         method: "PATCH",
+//         headers:{
+//             "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({
+//             unread: 0
+//         }),
+//     }).then((r) => {
+//       if(r.ok) {
+//           history.go(0)
+//                   }
+//               })
+// }
 
     return (
         <main class=" flex bg-gray-800 mx-auto w-fit mt-10 mb-20 ">

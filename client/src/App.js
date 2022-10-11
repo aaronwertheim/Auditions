@@ -29,6 +29,24 @@ function App() {
     });
   }, []);
 
+  function updateUnread(){
+      fetch(`/user/${user.id}/`, {
+          method: "PATCH",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+              unread: 0
+          })
+      }).then(() => {
+        fetch("/me").then((r) => {
+          if (r.ok) {
+            r.json().then((user) => setUser(user));
+          }
+        })
+      })
+  }
+
 
   if (!user) return ( <Login onLogin={setUser} /> )
 
@@ -61,7 +79,7 @@ function App() {
             <MessageForm user={user} currentShow={currentShow}/>
           </Route>
           <Route exact path={"/messages-list"}>
-            <MessagesList user={user}  />
+            <MessagesList user={user} updateUnread={updateUnread}  />
           </Route>
         </Switch>
         <Footer />

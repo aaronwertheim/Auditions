@@ -14,21 +14,6 @@ function MessagesList({user, updateUnread}) {
         .then(() => updateUnread())
     },[user.id])
 
-//     fetch(`/user/${user.id}/`, {
-//         method: "PATCH",
-//         headers:{
-//             "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({
-//             unread: 0
-//         }),
-//     }).then((r) => {
-//       if(r.ok) {
-//           history.go(0)
-//                   }
-//               })
-// }
-
     return (
         <main class=" flex bg-gray-800 mx-auto w-fit mt-10 mb-20 ">
             <div class={messages.length === 0 ? " mx-20" : "overflow-y-auto overflow-hidden pb-9"}>

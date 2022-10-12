@@ -1,10 +1,7 @@
-import React, { useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function NavBar({ user, setUser }) {
 
-
-    const history = useHistory();
     function handleLogoutClick() {
       fetch("/logout", { method: "DELETE" }).then((r) => {
         if (r.ok) {
@@ -12,24 +9,7 @@ function NavBar({ user, setUser }) {
         }
       });
     }
-
-    // function handleClick() {
-    //     fetch(`/user/${user.id}/`, {
-    //         method: "PATCH",
-    //         headers:{
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //             unread: 0
-    //         }),
-    //     }).then((r) => {
-    //       if(r.ok) {
-    //           history.go(0)
-    //                   }
-    //               })
-    // }
     
-
     return (
         <nav class="flex items-center justify-between flex-wrap bg-black text-white p-6 font-semibold">
             <div class="flex items-center flex-shrink-0  ">

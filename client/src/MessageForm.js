@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 
 
-function MessageForm({user, currentShow}) {
+function MessageForm({user}) {
 
     const [content, setContent] = useState();
     const [recipient, setRecipient] = useState();
